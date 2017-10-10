@@ -6,6 +6,14 @@ sidebar: overview_sidebar
 permalink: design_product_history.html
 summary: History of changes to the National Data Opt-out API.
 ---
+### Version 1.2.1-beta.1
+
+Correction to Organization URI.
+
+Added dateTime page, proving example of format and usage.
+
+Improve Me button fixed. 
+ 
 ### Version 1.2.0-beta.1 ###
 
 Corrections made to API REST statements.

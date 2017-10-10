@@ -1,4 +1,4 @@
-<h3 id="patient">{{include.content2}}</h3>
+<h3 id="consent">{{include.content2}}</h3>
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET {{include.base}}{{include.resource}}/[id]</div>
@@ -33,7 +33,7 @@ Return {{include.resource}} resource that has a patient reference of {{include.n
 GET {{include.base}}{{include.resource}}?patient=[reference]&category=[Category Type]&purpose=[opt-out]</div>
 
 <div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?https://nww.spine.nhs.uk/4505577104&category=NDOP&purpose=http://hl7.org/fhir/ConsentPolicy/opt-out|HRESCH
+<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?https://nww.spine.nhs.uk/4505577104&category=NDOP&purpose=http://hl7.org/fhir/ConsentPolicy/opt-out|RESCH
 </span></code>
 Return {{include.resource}} resource that has a patient reference of {{include.nhsno}} a category of {{include.text2}} and an  opt-out of {{include.text3}}</pre>
 </div>

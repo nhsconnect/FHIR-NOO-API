@@ -3,8 +3,8 @@ title: dateTime Element
 keywords: date, time
 tags: [date,time]
 sidebar: profiles_sidebar
-permalink: datetime.html
-summary: "low level details for the care connect patient 'dateTime' element"
+permalink: consent_datetime.html
+summary: "low level details for the National Data Opt-out 'dateTime' element"
 ---
 
 ### dateTime ###
