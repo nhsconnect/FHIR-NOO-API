@@ -1,4 +1,4 @@
-<h3 id="patient">{{include.content2}}</h3>
+<h3 id="history">{{include.content2}}</h3>
 
 <p>Return the patients historic instances for a given logical ID</p>
 
@@ -17,7 +17,7 @@ Return all historic {{include.resource}} instances for a patient with a logical 
 GET {{include.base}}{{include.resource}}?[patient]&[purpose]_history</div>
 
 <div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/_history?patient=https://nww.spine.nhs.uk/4505577104&purpose="HRESCH"/
+<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/_history?patient=https://nww.spine.nhs.uk/4505577104&purpose="RESCH"/
 </span></code>
 Return all historic {{include.resource}} instances for a patient with reference of {{include.text1}} and a purpose of {{include.text2}}.</pre>
 </div>
@@ -29,5 +29,5 @@ GET {{include.base}}{{include.resource}}/[id]_history[vid]</div>
 <div class="language-http highlighter-rouge">
 <pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/133552f9-7aaf-485f-a91a-bdfc0a367409/_history/6ed33184-56ab-450f-98c5-8f86d7310766
 </span></code>
-Return a historic {{include.resource}} instance for a patient with reference of {{include.id}} and a history id of {{include.histid}}.</pre>
+Return a historic {{include.resource}} instance for a patient with reference of {{include.id}} and a version id (vid) of {{include.histid}}.</pre>
 </div>

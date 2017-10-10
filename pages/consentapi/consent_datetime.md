@@ -3,7 +3,7 @@ title: dateTime Element
 keywords: date, time
 tags: [date,time]
 sidebar: profiles_sidebar
-permalink: datetime.html
+permalink: consent_datetime.html
 summary: "low level details for the National Data Opt-out 'dateTime' element"
 ---
 

@@ -41,7 +41,7 @@ National Data Opt-out Source of Opt-Out extension
 
 **XML Example 1**
 
-The example below demonstrates the structure of a constructed XML body that can be submitted to the National Data Opt-out service via a HTTP POST. This will set the preferences for HRESCH only.
+The example below demonstrates the structure of a constructed XML body that can be submitted to the National Data Opt-out service via a HTTP POST. This will set the preferences for RESCH only.
 
 <script src="https://gist.github.com/IOPS-DEV/49fa92287f5b1f05cf451a2f2466a77f.js"></script>
 
@@ -50,11 +50,11 @@ The example below demonstrates the structure of a constructed XML body that can 
 {% include warning.html content="To prevent duplicate NDOP instances for a patient, implementers MUST perform a search prior to a create, to check for an existing instance, or use a conditional create for creating new instances."%}
 
 
-{% include custom/get.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="133552f9-7aaf-485f-a91a-bdfc0a367409" nhsno="https://nww.spine.nhs.uk/4505577104" text2="NDOP" text3="HRESCH"%}
+{% include custom/get.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="133552f9-7aaf-485f-a91a-bdfc0a367409" nhsno="https://nww.spine.nhs.uk/4505577104" text2="NDOP" text3="RESCH"%}
 
 {% include custom/put.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="PUT" id="133552f9-7aaf-485f-a91a-bdfc0a367409"%}
 
 ## Searching National Data Opt-out History ##
 
-{% include custom/history.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="785f7cc6-f63b-41fc-9bd4-2d09df5606f9" text1="https://nww.spine.nhs.uk/4505577104" text2="HRESCH" histid="6ed33184-56ab-450f-98c5-8f86d7310766"%}
+{% include custom/history.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="785f7cc6-f63b-41fc-9bd4-2d09df5606f9" text1="https://nww.spine.nhs.uk/4505577104" text2="RESCH" histid="6ed33184-56ab-450f-98c5-8f86d7310766"%}
 
