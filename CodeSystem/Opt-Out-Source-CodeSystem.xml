@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir">
-<<<<<<< HEAD
-	<url value="https://fhir.nhs.uk/opt-out-source-codesystem-1"/>
-=======
 	<url value="https://fhir.nhs.uk/STU3/opt-out-source-codesystem-1"/>
->>>>>>> gh-pages
 	<version value="1.0.0"/>
 	<name value="Opt Out Source CodeSystem"/>
 	<status value="draft"/>
@@ -16,12 +12,8 @@
 			<use value="work"/>
 		</telecom>
 	</contact>
-	<purpose value="TBC -This code system is used to capture how the opt-out was recorded."/>
-	<copyright value="Copyright © 2017 Health and Social Care Information Centre. NHS Digital is the trading name of the Health and Social Care Information Centre."/>
-<<<<<<< HEAD
-	<valueSet value="https://fhir.nhs.uk/ValueSet/opt-out-source-1"/>
-=======
->>>>>>> gh-pages
+	<purpose value="This code system is used to capture how the opt-out was recorded."/>
+	<copyright value="© 2017 NHS Digital"/>
 	<content value="complete"/>
 	<concept>
 		<code value="OP"/>
