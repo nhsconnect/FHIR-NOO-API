@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <meta>
-    <lastUpdated value="2017-07-19T14:36:38.778+01:00" />
+    <lastUpdated value="2017-10-18T10:39:21.358+01:00" />
   </meta>
   <url value="https://fhir.nhs.uk/STU3/StructureDefinition/extension-optoutsource-1" />
   <version value="1.0.0" />
@@ -199,6 +199,13 @@
         <expression value="hasValue() | (children().count() &gt; id.count())" />
         <xpath value="@value|f:*|h:div" />
       </constraint>
+      <binding>
+        <strength value="required" />
+        <description value="Opt-out source" />
+        <valueSetReference>
+          <reference value="https://fhir.nhs.uk/STU3/ValueSet/opt-out-source-1" />
+        </valueSetReference>
+      </binding>
       <mapping>
         <identity value="rim" />
         <map value="n/a" />
@@ -311,11 +318,6 @@
         <xpath value="@value|f:*|h:div" />
       </constraint>
       <isSummary value="true" />
-      <binding>
-        <strength value="required" />
-        <description value="Opt-out source" />
-        <valueSetUri value="https://fhir.nhs.uk/opt-out-source-1" />
-      </binding>
       <mapping>
         <identity value="rim" />
         <map value="n/a" />
@@ -439,7 +441,6 @@
       <type>
         <code value="uri" />
       </type>
-      <fixedUri value="https://fhir.nhs.uk/opt-out-source-1" />
       <condition value="ele-1" />
       <constraint>
         <key value="ele-1" />
@@ -699,31 +700,32 @@
       <type>
         <code value="CodeableConcept" />
       </type>
-    </element>
-    <element>
-      <path value="Extension.valueCodeableConcept.coding" />
-      <min value="1" />
-      <max value="1" />
       <binding>
         <strength value="required" />
         <description value="Opt-out source" />
-        <valueSetUri value="https://fhir.nhs.uk/opt-out-source-1" />
+        <valueSetReference>
+          <reference value="https://fhir.nhs.uk/STU3/ValueSet/opt-out-source-1" />
+        </valueSetReference>
       </binding>
     </element>
-    <element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.system">
       <path value="Extension.valueCodeableConcept.coding.system" />
       <min value="1" />
-      <fixedUri value="https://fhir.nhs.uk/opt-out-source-1" />
     </element>
-    <element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.version">
       <path value="Extension.valueCodeableConcept.coding.version" />
       <max value="0" />
     </element>
-    <element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.code">
       <path value="Extension.valueCodeableConcept.coding.code" />
       <min value="1" />
     </element>
-    <element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.display">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true" />
       </extension>

@@ -14,7 +14,7 @@
 		</telecom>
 	</contact>
 	<description value="The source method that was used to set the preferences"/>
-	<copyright value="Copyright © 2017 Health and Social Care Information Centre. NHS Digital is the trading name of the Health and Social Care Information Centre."/>
+	<copyright value="© 2017 NHS Digital"/>
 	<compose>
 		<include>
 			<system value="https://fhir.nhs.uk/STU3/opt-out-source-codesystem-1"/>
