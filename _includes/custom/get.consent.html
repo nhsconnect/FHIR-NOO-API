@@ -13,7 +13,7 @@ Return {{include.resource}} resource that has a logical id of {{include.id}}.</p
 GET {{include.base}}{{include.resource}}?patient=[reference]</div>
 
 <div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?patient=https://nww.spine.nhs.uk/4505577104
+<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?patient=https://demographics.spineservices.nhs.uk/4505577104
 </span></code>
 Return {{include.resource}} resource that has a patient reference of {{include.nhsno}}.</pre>
 </div>
@@ -24,7 +24,7 @@ Return {{include.resource}} resource that has a patient reference of {{include.n
 GET {{include.base}}{{include.resource}}?patient=[NHS Number]&category=[Category Type]</div>
 
 <div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?patient=https://nww.spine.nhs.uk/4505577104&category=NDOP
+<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?patient=https://demographics.spineservices.nhs.uk/4505577104&category=NDOP
 </span></code>
 Return {{include.resource}} resource that has a patient reference of {{include.nhsno}} and a category of {{include.text2}}.</pre>
 </div>
@@ -33,7 +33,7 @@ Return {{include.resource}} resource that has a patient reference of {{include.n
 GET {{include.base}}{{include.resource}}?patient=[reference]&category=[Category Type]&purpose=[opt-out]</div>
 
 <div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?https://nww.spine.nhs.uk/4505577104&category=NDOP&purpose=http://hl7.org/fhir/ConsentPolicy/opt-out|RESCH
+<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?https://demographics.spineservices.nhs.uk/4505577104&category=NDOP&purpose=http://hl7.org/fhir/ConsentPolicy/opt-out|RESCH
 </span></code>
 Return {{include.resource}} resource that has a patient reference of {{include.nhsno}} a category of {{include.text2}} and an  opt-out of {{include.text3}}</pre>
 </div>
