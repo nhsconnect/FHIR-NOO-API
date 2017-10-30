@@ -13,23 +13,31 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of Nation
 
 |Profile| 
 |-------|
-| [NDOP-Consent-1](https://simplifier.net/NOOM/Consent) | 
+| [NDOP-Consent-1](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1) | 
 
 # National Data Opt-out Extensions
 
 |Extension|
 |---------|
-| [Extension-ActorPerson-1](https://simplifier.net/NOOM/extension-actorperson-1)|
-| [Extension-Extension-Opt-out-Source-1](https://simplifier.net/NOOM/extension-optoutsource-1)|
+| [Extension-NDOP-ActorPerson-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-ActorPerson-1)|
+| [Extension-NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1)|
 
 
 # National Data Opt-out Valesets
 
-|Valeset|Description|
+|Valueset|Description|
 |-------|-----------|
-|[ndop-category-1](https://simplifier.net/NOOM/category-1)|
-|[ndop-preferences-1](https://simplifier.net/NOOM/preferences-1)|
-|[Opt-Out-Source](https://simplifier.net/NOOM/opt-out-source-1)|
+|[NDOP-Category-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Category-1)|
+|[NDOP-Preferences-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Preferences-1)|
+|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|
+
+# National Data Opt-out CodeSystems
+
+|CodeSystem|Description|
+|-------|-----------|
+|[NDOP-Categories-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1)|
+|[NDOP-PreferencesCodes-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1)|
+|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|
 
 # Identifiers #
 
