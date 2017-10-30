@@ -7,8 +7,6 @@ permalink: development_deliverables.html
 summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of National Data Opt-out API."
 ---
 
-{% include important.html content="[Simplifier.net](https://simplifier.net/NOOM/~introduction) is used to as a temporary solution to provide rendered profiles until the fhir.nhs.uk server is updated to support STU3 rendered profiles. The links below will only resolve once this work has been completed."%}
-
 # National Data Opt-out Profiles:
 
 |Profile| 
@@ -45,8 +43,8 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of Nation
 |--------------------------------------------|----------|----|
 | `Logical ID` | https://fhir.nhs.uk/Consent/[id] | Consent record identifier |
 | `Patient` | https://demographics.spineservices.nhs.uk | Patient |
-|`actor`|https://clinicals.spineservices.nhs.uk or https://demographics.spineservices.nhs.uk | Patient or Practitioner|
-|`organization`|https://clinicals.spineservices.nhs.uk |NHS Digital (X26)|
+|`actor`|https://demographics.spineservices.nhs.uk or https://directory.spineservices.nhs.uk | Patient or Practitioner|
+|`organization`|https://directory.spineservices.nhs.uk |NHS Digital (X26)|
 
 
 {% include warning.html content="The URI's on subdomain spineservices.nhs.uk are currently not resolvable, however this will change in the future where references relate to FHIR endpoints in our national systems." %}
