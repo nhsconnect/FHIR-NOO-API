@@ -21,18 +21,18 @@ The ActorPerson extension is used to capture an actor that acts on behalf of the
 **Example of Correct Usage**
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`Extension-ActorPerson-1`| Parent of child |Parent asked GP to set preferences for child|
+|![Tick](images/tick.png)|`Extension-NDOP-ActorPerson-1`| Parent of child |Parent asked GP to set preferences for child|
 
 **Example of Incorrect Usage**
 
 |Usage| Element| examples| Comments|
-|![Cross](images/cross.png)|`Extension-ActorPerson-1`|GP|GP would be the actor not the ActorPerson|
+|![Cross](images/cross.png)|`Extension-NDOP-ActorPerson-1`|GP|GP would be the actor not the ActorPerson|
 
 
 On the wire XML example
 
 ```xml
-<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/extension-actorperson-1">
+<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-ActorPerson-1">
 	<valueString value="Parent of child"/>
 </extension>
 ```
@@ -43,7 +43,7 @@ On the wire example in JSON
 {
   "extension": [
 	{
-    "url": "https://fhir.nhs.uk/STU3/StructureDefinition/extension-actorperson-1",
+    "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-ActorPerson-1",
     "valueString": "Parent of child"
 	}
   ]

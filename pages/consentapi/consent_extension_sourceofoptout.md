@@ -33,21 +33,21 @@ National Data Opt-out supports the following source of opt-out codes:
 **Example of Correct Usage**
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`Extension-SourceOfOptOut-1`| OP |Online Process.|
+|![Tick](images/tick.png)|`Extension-NDOP-OptOutSource-1`| OP |Online Process.|
 
 **Example of Incorrect Usage**
 
 |Usage| Element| examples| Comments|
-|![Cross](images/cross.png)|`Extension-SourceOfOptOut-1`|NHS Choices|This is not a value defined within the valueset.|
+|![Cross](images/cross.png)|`Extension-NDOP-OptOutSource-1`|NHS Choices|This is not a value defined within the valueset.|
 
 
 On the wire XML example
 
 ```xml
-<extension url="http://fhir.nhs.net/StructureDefinition/extension-cofe-care-setting-type-1">
+<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1">
 	<valueCodeableConcept>
 		<coding>
-			<system value="https://fhir.nhs.uk/opt-out-source-codesystem-1"/>
+			<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1"/>
 			<code value="OP"/>
 			<display value="Online Process"/>
 		</coding>
@@ -63,7 +63,7 @@ On the wire example in JSON
 	"valuecodeableconcept" : {
 	"coding": [
 	  {
-		"system": "https://fhir.nhs.uk/opt-out-source-codesystem-1",
+		"system": "https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1",
 		"code": "OP",
 		"display": "Online process"
 	  }

@@ -41,7 +41,7 @@ On the wire example in JSON
 
 ```json
 {
-  "extension": [
+  "policy": [
 	{
 	"authority": "https://www.gov.uk/",
     "url": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"
