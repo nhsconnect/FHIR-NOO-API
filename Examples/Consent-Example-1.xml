@@ -35,7 +35,7 @@
 		</reference>
 	</actor>
 	<organization>
-		<reference value="https://clinicals.spineservices.nhs.uk/X26"/>
+		<reference value="https://directory.spineservices.nhs.uk/X26"/>
 	</organization>
 	<policy>
 		<authority value="https://www.gov.uk/"/>

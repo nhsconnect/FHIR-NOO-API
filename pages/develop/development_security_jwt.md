@@ -23,9 +23,9 @@ Consumer system SHALL generate a new JWT for each API request.
 | exp | R | Expiration time integer after which this authorization MUST be considered invalid. | `exp` | (now + 5 minutes) UTC time in seconds | |
 | iat | R | The UTC time the JWT was issued by the requesting system | iat | now UTC time in seconds | |
 | reason_for_request | R | Purpose for which access is being requested | `optoutprefs` | No | |
-| requested_record | R | The FHIR consent resource being requested (i.e. NHS Number identifier details) | No | FHIR Consent | Consent-1[Rendered](https://fhir.nhs.uk/STU3/structuredfintion/consent-1.html)[json]() [Example]() |
+| requested_record | R | The FHIR consent resource being requested (i.e. NHS Number identifier details) | No | FHIR Consent | Consent-1[Rendered](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1)[Example](https://github.com/nhsconnect/FHIR-NOO-API/Examples/Consent-Example-1.xml) |
 | requested_scopes | R | Data being requested | consent.read | No | |
-| requesting_actor | R | Reference to the person who is making the request | No | Reference | https://clinicals.spineservices.nhs.uk/E12345 | |
+| requesting_actor | R | Reference to the person who is making the request | No | Reference | https://directory.spineservices.nhs.uk/E12345 | |
 
 
 #### JWT Generation ####

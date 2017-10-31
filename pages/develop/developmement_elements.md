@@ -16,9 +16,10 @@ summary: "Implementation guide on the characteristics and usage of the profiles 
 |[`category`](consent_category.html)|string|1..1|Category uses the Consent.category element to distinguish the national opt-out consent instances from any other consent instance|NDOP|
 |[`patient`](consent_patient.html)|Reference|1..1|Spine reference to the patients NHS number traced from PDS|
 |[`dateTime`](consent_datetime.html)|dateTime|1..1|Date and time instance was last updated|Date+Time+TimeZone|
-|[`actor`](consent_actor.html)|backbone|1..*|Captures the patient or healthcare professional who controls the consent|N/A|
+|[`actor`](consent_actor.html)|backbone|1..1|Captures the patient or healthcare professional who controls the consent|N/A|
 |`actor.role`|CodeableConcept|1..1|Valueset for the role|INF=informant|
 |`actor.reference`|Reference|1..1|URL for the actor|
+|`actor.extension.actorperson`|String|0..1|Proxy for patient e.g Parent|Patients Mother|
 |[`organization`](consent_organization.html)|Reference|1..1|ODS code for the organization.|MUST be a URL|
 |[`policy`](consent_policy.html)|uri|1..1|Policy that the consent refers to|Should be able to resolve policy uri|
 |[`purpose`](consent_purpose.html)|Coding|1..1|Contains Opt-Out for Research or Commissioning & Planning|RESCH, PLAN|
@@ -27,9 +28,6 @@ summary: "Implementation guide on the characteristics and usage of the profiles 
 ## Consent Extensions ##
 
 National Data Opt-out Source of Opt-Out extension
-
-`https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1`
-
 
 |Name|Data Type|Card|Description|
 |----|---------|----|-----------|
