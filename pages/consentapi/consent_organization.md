@@ -21,7 +21,7 @@ National Data Opt-out uses consent.organization to capture the custodian organiz
 Example of correct usage
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`organization`|https://clinicals.spineservices.nhs.uk/X26|Organization should have a fixed value of 'X26' which is the ODS code for NHS Digital|
+|![Tick](images/tick.png)|`organization`|https://directory.spineservices.nhs.uk/X26|Organization should have a fixed value of 'X26' which is the ODS code for NHS Digital|
 
 Examples of incorrect usage
 
@@ -45,7 +45,7 @@ JSON example
 {
   "organization": [
 	{
-      "reference": "https://clinicals.spineservices.nhs.uk/X26"
+      "reference": "https://directory.spineservices.nhs.uk/X26"
   }
  ]
 }

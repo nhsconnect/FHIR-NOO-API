@@ -24,7 +24,7 @@ Example of correct usage
 
 |Usage| Element| examples| Comments|
 |![Tick](images/tick.png)|`role`| INF |Valid code taken from http://hl7.org/fhir/stu3/valueset-security-role-type|
-|![Tick](images/tick.png)|`reference`| https://clinicals.spineservices.nhs.uk/G1231231 |
+|![Tick](images/tick.png)|`reference`| https://directory.spineservices.nhs.uk/G1231231 |
 |![Tick](images/tick.png)|`reference`| https://demographics.spineservices.nhs.uk/4505577104 |
 
 Examples of incorrect usage
