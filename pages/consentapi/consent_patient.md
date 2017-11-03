@@ -19,7 +19,7 @@ patient uses the Consent.patient element to store a PDS reference that includes 
 Example of correct usage
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`patient`| https://demographics.spineservices.nhs.uk/4505577104| A valid reference that includes the patients NHS number with no spaces|
+|![Tick](images/tick.png)|`patient`| https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104| A valid reference that includes the patients NHS number with no spaces|
 
 Examples of incorrect usage
 
@@ -31,7 +31,7 @@ XML Example
 
 ```xml
     <patient>
-    	<reference value="https://demographics.spineservices.nhs.uk/4505577104"/> 
+    	<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104"/> 
     </patient>
 ```
 
@@ -39,7 +39,7 @@ XML Example
 {
   "patient": [
 	{
-	  "reference" : "https://demographics.spineservices.nhs.uk/4505577104""
+	  "reference" : "https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104""
 	}
    ]
 }

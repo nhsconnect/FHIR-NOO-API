@@ -6,6 +6,14 @@ sidebar: overview_sidebar
 permalink: design_product_history.html
 summary: History of changes to the National Data Opt-out API.
 ---
+### Version 1.3.1-beta.1
+
+Change to references used by patient and organization. These now include the FHIR version and a FHIR resource e.g https://demographics.spineservices.nhs.uk/STU3/Patient/6101231234
+
+REST examples updated.
+Consent example updated.
+
+
 ### Version 1.3.0-beta.1
 
 NDOP now published onto https://fhir.nhs.uk. Links in API now resolvable, with the exception of the spineservice.nhs.uk domain.

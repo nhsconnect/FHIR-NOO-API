@@ -24,8 +24,8 @@ Example of correct usage
 
 |Usage| Element| examples| Comments|
 |![Tick](images/tick.png)|`role`| INF |Valid code taken from http://hl7.org/fhir/stu3/valueset-security-role-type|
-|![Tick](images/tick.png)|`reference`| https://directory.spineservices.nhs.uk/G1231231 |
-|![Tick](images/tick.png)|`reference`| https://demographics.spineservices.nhs.uk/4505577104 |
+|![Tick](images/tick.png)|`reference`| https://directory.spineservices.nhs.uk/STU3/Organization/G1231231 |
+|![Tick](images/tick.png)|`reference`| https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104 |
 
 Examples of incorrect usage
 
@@ -45,7 +45,7 @@ XML example
     </coding>
   </role>
   <reference>
-    <reference value="https://demographics.spineservices.nhs.uk/4505577104"/>
+    <reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104"/>
   </reference>
 </actor>
 ```
@@ -65,7 +65,7 @@ JSON example
         ]
       },
       "reference": {
-        "reference": "https:/demographics.spineservices.nhs.uk/4505577104"
+        "reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104"
       }
     }
   ]

@@ -19,18 +19,18 @@ consenting party uses the Consent.consentingParty element to capture the consent
 Example of correct usage
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`consentingParty`|https://demographics.spineservices.nhs.uk/4505577104 |
+|![Tick](images/tick.png)|`consentingParty`|https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104 |
 
 Examples of incorrect usage
 
 |Usage| Element| examples| Comments|
-|![Cross](images/cross.png)|`consentingParty`| https://demographics.spineservices.nhs.uk/450-557-7104|
+|![Cross](images/cross.png)|`consentingParty`| https://demographics.spineservices.nhs.uk/STU3/Patient/450-557-7104|
 
 XML example
 
 ```xml
     <consentingParty>
-    	<reference value="https://demographics.spineservices.nhs.uk/4505577104"/>
+    	<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104"/>
     </consentingParty>
 ```
 
@@ -40,7 +40,7 @@ JSON example
 {
   "consentingParty": [
 	{
-     "reference": "https://demographics.spineservices.nhs.uk/4505577104"
+     "reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104"
   }
  ]
 }
