@@ -32,7 +32,7 @@ National Data Opt-out Source of Opt-Out extension
 |Name|Data Type|Card|Description|
 |----|---------|----|-----------|
 |[`actor.actorperson`](consent_extension_actorperson.html)|extension|0..1|String value to capture person|Mother of patient|
-|[`OptoutSource`](consent_extension_sourceofoptout.html)|extension|1..1|Extension to capture the source that defined the national opt-out preferences e.g NHS Choice, GP System|
+|[`SourceOfOptOut`](consent_extension_sourceofoptout.html)|extension|1..1|Extension to capture the source that defined the national opt-out preferences e.g NHS Choice, GP System|
 
 
 ## FHIR&reg; RESTful API Examples ##

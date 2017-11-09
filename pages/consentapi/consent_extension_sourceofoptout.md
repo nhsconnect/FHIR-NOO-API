@@ -76,12 +76,7 @@ On the wire example in JSON
 
 *Error Handling*
 
-The provider system SHALL return an error if:
-
-- The `birthDate` value does not comply with the aforementioned format.
-- The `birthDate` value is omitted.
-- The `birthDate` value is an invalid date.
-
+HTTP response codes will determine the success or failure of the POST operation. No element specific codes will be generated upon failure to POST.
 
 
 
