@@ -9,7 +9,7 @@ summary: "low level details for the National Data Opt-out 'category' element"
 
 ### Element Usage ###
 
-Category uses the Consent.category element to distinguish the National Data Opt-out consent instances from any other consent instance, such as T2 Opt-out. Codes are taken from the CodeSystem https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1.
+Category uses the Consent.category element to distinguish the National Data Opt-out consent instances from any other consent instance, such as T2 Opt-out. Codes are taken from the CodeSystem [https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1).
 
 
 ### category ###
@@ -21,12 +21,12 @@ Category uses the Consent.category element to distinguish the National Data Opt-
 Example of correct usage
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`category`| NDOP| A valid category code taken from https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1 to identify consent instance as a NDOP type Opt-out.
+|![Tick](images/tick.png)|`category`| NDOP| A valid category code taken from `https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1` to identify consent instance as a NDOP type Opt-out.
 
 Examples of incorrect usage
 
 |Usage| Element| examples| Comments|
-|![Cross](images/cross.png)|`category`| ICOL|Code taken from http://hl7.org/fhir/v3/ActCode. Not use by NDOP.|
+|![Cross](images/cross.png)|`category`| ICOL|Code taken from `http://hl7.org/fhir/v3/ActCode`. Not use by NDOP.|
 
 
 XML Example

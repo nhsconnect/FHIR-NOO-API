@@ -9,7 +9,7 @@ summary: "low level details for the National Data Opt-out 'purpose' element"
 
 ### Element Usage ###
 
-purpose uses the Consent.purpose element to set the Opt-out preferences that the patient has chosen. Valid codes are taken from the CodeSystem https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1.
+purpose uses the Consent.purpose element to set the Opt-out preferences that the patient has chosen. Valid codes are taken from the CodeSystem [https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1).
 
 ### status ###
 
