@@ -9,7 +9,7 @@ summary: "low level details for the care connect patient 'SourceOfOptOut' extens
 
 ### Element Usage ###
 
-The SourceOfOptOut extension is used to capture the mechanism used to set the patients National Data Opt-out preferences. Valid codes are taken from the CodeSystem [https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1).
+The SourceOfOptOut extension is used to capture the mechanism used to set the patients National Data Opt-out preferences. Valid codes are taken from the CodeSystem [https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1).
 
 ### SourceOfOptOut ###
 
