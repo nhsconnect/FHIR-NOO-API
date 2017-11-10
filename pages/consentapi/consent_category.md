@@ -9,7 +9,8 @@ summary: "low level details for the National Data Opt-out 'category' element"
 
 ### Element Usage ###
 
-Category uses the Consent.category element to distinguish the national opt-out consent instances from any other consent instance.
+Category uses the Consent.category element to distinguish the National Data Opt-out consent instances from any other consent instance, such as T2 Opt-out. Codes are taken from the CodeSystem https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1.
+
 
 ### category ###
 
@@ -20,7 +21,7 @@ Category uses the Consent.category element to distinguish the national opt-out c
 Example of correct usage
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`category`| NDOP| A valid category code to identify consent instance as a NDOP type.
+|![Tick](images/tick.png)|`category`| NDOP| A valid category code taken from https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1 to identify consent instance as a NDOP type Opt-out.
 
 Examples of incorrect usage
 
@@ -33,7 +34,7 @@ XML Example
 ```xml
 <category>
 	<coding>
-		<system value="https://fhir.nhs.uk/ValueSet/noom-category-type-1"/>
+		<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1"/>
 		<code value="NDOP"/>
 	</coding>
 </category>
@@ -46,7 +47,7 @@ JSON Example
   "category": {
     "coding": [
 	  {
-        "system": "https://fhir.nhs.uk/ValueSet/noom-category-type-1",
+        "system": "https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1",
         "code": "NDOP" 
     }
   ]

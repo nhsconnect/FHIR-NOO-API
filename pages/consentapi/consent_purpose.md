@@ -9,7 +9,7 @@ summary: "low level details for the National Data Opt-out 'purpose' element"
 
 ### Element Usage ###
 
-purpose uses the Consent.purpose element to set the opt-out preferences that the patient has chosen. 
+purpose uses the Consent.purpose element to set the Opt-out preferences that the patient has chosen. Valid codes are taken from the CodeSystem https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1.
 
 ### status ###
 
@@ -33,7 +33,7 @@ XML example
 
 ```xml
     <purpose>
-        <system value="https://fhir.nhs.uk/ndop-preference-codes-1"/>
+        <system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1"/>
         <code value="RESCH"/>
         <display value="healthcare research"/>
     </purpose>
@@ -45,7 +45,7 @@ JSON example
 {
   "purpose": [
 	{
-    "system": "https://fhir.nhs.uk/ndop-preference-codes-1",
+    "system": "https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1",
     "code": "RESCH",
     "display": "healthcare research"
   }

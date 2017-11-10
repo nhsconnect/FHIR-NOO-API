@@ -8,7 +8,7 @@ summary: "low level details for the National Data Opt-out 'patient' element"
 ---
 ### Element Usage ###
 
-patient uses the Consent.patient element to store a PDS reference that includes the patients 10 digit NHS number which has been allocated to the instance via a succesful PDS trace using the patient demographics service (PDS). 
+Patient uses the Consent.patient element to store a PDS (Patient Demographics Service) reference that includes the patients 10 digit NHS number which has been allocated to the instance via a successful PDS trace. 
 
 ### patient ###
 

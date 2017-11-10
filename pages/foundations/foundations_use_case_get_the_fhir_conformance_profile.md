@@ -7,7 +7,7 @@ permalink: foundations_use_case_get_the_fhir_conformance_profile.html
 summary: "Use case for getting the FHIR server's capability statement profile."
 ---
 
-{% include important.html content="The capabilityStatement is out of scope for NDOP API. It is the responsibility of the service provider to establish a capabilityStatement for a FHIR endpoint that." %}
+{% include important.html content="The capabilityStatement is out of scope for NDOP API. It is the responsibility of the service provider to establish a capabilityStatement for a FHIR endpoint that supports NDOP." %}
 
 
 #### FHIR Capability Statement Request ####
@@ -32,6 +32,9 @@ Client SHALL include the following additional HTTP request headers:
 | `To`             | Provider's ASID |
 | `InteractionID`  | `urn:nhs:names:services:nationaldataoptout:fhir:rest:read:metadata`|
 | `Authorization`      | This will carry the base64 encoded JSON web token required for audit - see [Cross Organisation Audit and Provenance](https://nhsconnect.github.io/FHIR-NOO-API/development_security_jwt.html) for details. |
+
+and MAY include the following header:
+
 | `If-None-Exists` | This will check for an existing instance before making creating a new one |
 
 

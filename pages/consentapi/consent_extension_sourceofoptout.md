@@ -17,7 +17,7 @@ The SourceOfOptOut extension is used to capture the mechanism used to set the pa
 | ------------- | ------------- | ------------- | ------------- |
 | Extension| Extension-SourceOfOptOut-1| Coding | Mechanism used to capture patient national opt-out preferences |
 
-## Valueset 
+## CodeSystem 
 
 National Data Opt-out supports the following source of opt-out codes:
 

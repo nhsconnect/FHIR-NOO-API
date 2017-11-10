@@ -23,7 +23,7 @@ actor uses the Consent.actor element to capture the patient or a healthcare prof
 Example of correct usage
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`role`| INF |Valid code taken from http://hl7.org/fhir/stu3/valueset-security-role-type|
+|![Tick](images/tick.png)|`role`| INF |Valid code taken from http://hl7.org/fhir/stu3/valueset-security-role-type. Fixed value.|
 |![Tick](images/tick.png)|`reference`| https://directory.spineservices.nhs.uk/STU3/Organization/G1231231 |
 |![Tick](images/tick.png)|`reference`| https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104 |
 
