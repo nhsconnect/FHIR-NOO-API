@@ -31,9 +31,8 @@ The patient's opt-out preference will be stored in a central repository and syst
 
 ### What healthcare professionals need to know ###
 
-All health and care professionals need to be aware of the national data opt-out and either be able to provide or direct patients to where they can find out more information. Anyone responsible for providing data to another organisation for purposes beyond the individual's care and treatment will also need to know how to uphold a patient's opt-out.
-For example, if you're a GP, your patients may ask you questions about the opt-out. Over time you'll find a range of materials on this page aimed at supporting you to uphold the opt-out and for you to download to communicate the new opt-out to your patients. These materials will be available in a variety of formats.
+All health and care professionals need to be aware of the National Data Opt-out Programme and be able to provide or direct patients to where they can find out more information. Anyone responsible for providing data to another organisation for purposes beyond the individual's care and treatment will also need to know how to uphold a patient's opt-out. For example, if you're a GP, your patients may ask you questions about the National data Opt-out programme. 
 
 ### When the opt-out is happening ###
 
-The national data opt-out will be introduced in a phased way, starting with the ability for patients to register their opt-out preferences later this year (2017). The ability for the health and care system to be able to uphold those opt-out preferences is expected to start with NHS Digital and be achieved incrementally by all health and care providers through to 2020.
+The national data opt-out will be introduced in a phased way, starting with the ability for patients to register their opt-out preferences in 2018. The ability for the health and care system to be able to uphold those opt-out preferences is expected to start with NHS Digital and be achieved incrementally by all health and care providers through to 2020.

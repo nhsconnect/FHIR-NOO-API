@@ -12,6 +12,7 @@ summary: "low level details for the care connect patient 'id' element"
 
 National Data Opt-out uses the Consent.id element to store a universal unique identification (UUID) to each consent record that is created. Every new consent instance that is created using the National Data Opt-out service will be allocated a UUID to identify that record and will retain that UUID throughout the lifespan of the instance. Depending on the opt-out preferences set by the patient, they may have 1 or 2 instances. Where no preferences have been set by the patient, an instance will not exist.
 
+{% include important.html content="The id is NOT required when a new instance is created (POST'd) on the FHIR server using REST. The id is used to retrieve or update a specific record." %}
 ### id ###
 
 |Name|Data Type|Description|

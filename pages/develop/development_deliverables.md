@@ -41,9 +41,8 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of Nation
 
 | identifier | URI | Comment |
 |--------------------------------------------|----------|----|
-| `Logical ID` | https://fhir.nhs.uk/Consent/[id] | Consent record identifier |
 | `Patient` | https://demographics.spineservices.nhs.uk/STU3/Patient/[NHS Number] | Patient |
-|`actor`|https://demographics.spineservices.nhs.uk/STU3/Patient/[NHS Number] or https://directory.spineservices.nhs.uk/STU3/Organization/[Org Code] | Patient or Practitioner|
+|`actor`|https://demographics.spineservices.nhs.uk/STU3/Patient/[NHS Number] or https://directory.spineservices.nhs.uk/STU3/Practitioner/[Org Code] | Patient or Practitioner|
 |`organization`|https://directory.spineservices.nhs.uk/STU3/Organization/[Org Code] |NHS Digital (X26)|
 
 

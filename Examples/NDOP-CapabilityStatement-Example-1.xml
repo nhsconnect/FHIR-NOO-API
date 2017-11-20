@@ -24,6 +24,9 @@
 		<mode value="server"/>
 		<resource>
 			<type value="Consent"/>
+			<profile>
+				<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1"/>
+			</profile>
 			<interaction>
 			<extension url="http://hl7.org/fhir/StructureDefinition/conformance-expectation">
 				<valueCode value="SHALL"/>
@@ -47,9 +50,7 @@
 			</interaction>
 			<versioning value="versioned"/>
 			<readHistory value="true"/>
-			<conditionalCreate value="true"/>
-			<conditionalUpdate value="true"/>
-				<searchParam>
+			<searchParam>
 				<name value="patient"/>
 				<type value="reference"/>
 			</searchParam>

@@ -20,8 +20,8 @@ summary: "Implementation guide on the characteristics and usage of the profiles 
 |`actor.role`|CodeableConcept|1..1|Valueset for the role|INF=informant|
 |`actor.reference`|Reference|1..1|URL for the actor|
 |`actor.extension.actorperson`|String|0..1|Proxy for patient e.g Parent|Patients Mother|
-|[`organization`](consent_organization.html)|Reference|1..1|ODS code for the organization.|MUST be a URL|
-|[`policy`](consent_policy.html)|uri|1..1|Policy that the consent refers to|Should be able to resolve policy uri|
+|[`organization`](consent_organization.html)|Reference|1..1|Spine reference to the NHS Digital ODS code|MUST be a URL|
+|[`policy`](consent_policy.html)|uri|1..1|Policy that the consent refers to|Should be able to resolve policy url|
 |[`purpose`](consent_purpose.html)|Coding|1..1|Contains Opt-Out for Research or Commissioning & Planning|RESCH, PLAN|
 
 

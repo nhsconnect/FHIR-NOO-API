@@ -7,12 +7,12 @@
 		<valueCodeableConcept>
 			<coding>
 				<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1"/>
-				<code value="OLP"/>
+				<code value="OP"/>
 				<display value="Online Portal"/>
 			</coding>
 		</valueCodeableConcept>
 	</extension>
-	<status value="active"/>
+	<status value="inactive"/>
 	<category>
 		<coding>
 			<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1"/>
