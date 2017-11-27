@@ -151,7 +151,7 @@ Failure:
 |HTTP Code|issue-severity|issue-type|Details.Code|Details.Display|
 |---------|--------------|----------|------------|---------------|
 |405|error|forbidden|MSG_RESOURCE_ID_FAIL|Client is not permitted to assign an id|
-|422|error|duplicate|MSG_DUPLICATE_ID|Consent already exists for this patient/policy/purpose|
+|422|error|duplicate|DUPLICATE_REJECTED|Consent already exists for this patient/policy/purpose|
 
 **Response Spine-OperationOutcome-1 Example**
 
