@@ -11,7 +11,8 @@ summary: "Developer Cheat Sheet shortcuts for the technical build of National Da
 
 |Profile| 
 |-------|
-| [NDOP-Consent-1](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1) | 
+|[NDOP-Consent-1](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1) | 
+|[Spine-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/Spine-OperationOutcome-1) | 
 
 # National Data Opt-out Extensions
 
@@ -27,6 +28,7 @@ summary: "Developer Cheat Sheet shortcuts for the technical build of National Da
 |-------|-----------|
 |[NDOP-Preferences-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Preferences-1)|
 |[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|
+|[spine-error-or-warning-code-1](https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1)
 
 # National Data Opt-out CodeSystems
 
@@ -34,6 +36,7 @@ summary: "Developer Cheat Sheet shortcuts for the technical build of National Da
 |-------|-----------|
 |[NDOP-PreferencesCodes-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1)|
 |[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|
+|[Spine-ErrorOrWarningCode-1](https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1)
 
 # Identifiers #
 
