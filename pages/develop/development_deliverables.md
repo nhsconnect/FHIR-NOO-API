@@ -26,17 +26,17 @@ summary: "Developer Cheat Sheet shortcuts for the technical build of National Da
 
 |Valueset|Description|
 |-------|-----------|
-|[NDOP-Preferences-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Preferences-1)|
-|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|
-|[spine-error-or-warning-code-1](https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1)
+|[NDOP-Preferences-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Preferences-1)|Valueset used to set Opt-out preferences|
+|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|How the Opt-out preference was set e.g Online, GP, etc.|
+|[spine-error-or-warning-code-1](https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1)|Spine error codes|
 
 # National Data Opt-out CodeSystems
 
 |CodeSystem|Description|
 |-------|-----------|
-|[NDOP-PreferencesCodes-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1)|
-|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|
-|[Spine-ErrorOrWarningCode-1](https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1)
+|[NDOP-PreferencesCodes-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1)|List of Opt-out preference codes|
+|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|List of Opt-out sources|
+|[Spine-ErrorOrWarningCode-1](https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1)|Spine error codes and descriptions.|
 
 # Identifiers #
 
