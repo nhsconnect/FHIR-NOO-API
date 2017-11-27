@@ -1,13 +1,6 @@
 <h3 id="consent">{{include.content2}}</h3>
 
-<div markdown="span" class="alert alert-success" role="alert">
-GET {{include.base}}{{include.resource}}/[id]</div>
-
-<div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/133552f9-7aaf-485f-a91a-bdfc0a367409
-</span></code>
-Return {{include.resource}} resource that has a logical id of {{include.id}}.</pre>
-</div>
+<p>Return all live records that exist for patient 4505577104</p>
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET {{include.base}}{{include.resource}}?patient=[reference]</div>
@@ -18,24 +11,6 @@ GET {{include.base}}{{include.resource}}?patient=[reference]</div>
 Return {{include.resource}} resource that has a patient reference of {{include.nhsno}}.</pre>
 </div>
 
-<p>Return all current patients consent instances that exist with the supplied patient reference and with a category of "NDOP" to indicate these are National Opt-Out records that exclude Type 2 objections.</p> 
 
-<div markdown="span" class="alert alert-success" role="alert">
-GET {{include.base}}{{include.resource}}?patient=[NHS Number]&category=[Category Type]</div>
-
-<div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104&category=NDOP
-</span></code>
-Return {{include.resource}} resource that has a patient reference of {{include.nhsno}} and a category of {{include.text2}}.</pre>
-</div>
-
-<div markdown="span" class="alert alert-success" role="alert">
-GET {{include.base}}{{include.resource}}?patient=[reference]&category=[Category Type]&purpose=[opt-out]</div>
-
-<div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}?https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104&category=NDOP&purpose=RESCH
-</span></code>
-Return {{include.resource}} resource that has a patient reference of {{include.nhsno}} a category of {{include.text2}} and an  opt-out of {{include.text3}}</pre>
-</div>
 
 <p>See <a href="https://www.hl7.org/fhir/searchparameter-registry.html">reference</a> for details on this parameter.</p>

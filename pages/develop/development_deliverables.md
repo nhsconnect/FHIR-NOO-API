@@ -4,7 +4,7 @@ keywords: development Reference
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_deliverables.html
-summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of National Data Opt-out API."
+summary: "Developer Cheat Sheet shortcuts for the technical build of National Data Opt-out API."
 ---
 
 # National Data Opt-out Profiles:
@@ -21,11 +21,10 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of Nation
 | [Extension-NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1)|
 
 
-# National Data Opt-out Valesets
+# National Data Opt-out Valuesets
 
 |Valueset|Description|
 |-------|-----------|
-|[NDOP-Category-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Category-1)|
 |[NDOP-Preferences-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Preferences-1)|
 |[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|
 
@@ -33,7 +32,6 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of Nation
 
 |CodeSystem|Description|
 |-------|-----------|
-|[NDOP-Categories-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1)|
 |[NDOP-PreferencesCodes-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1)|
 |[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|
 

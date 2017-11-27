@@ -7,11 +7,7 @@ entries:
   - title: Overview
     output: web
     folderitems:
-    - title: National Data Opt-out Programme API
-      url: /index.html
-      output: web, pdf
-      type: homepage
-    - title: About NDOP
+    - title: About National Data Opt-out Programme
       url: /overview_ndop.html
       output: web
     - title: Semantic Versioning
@@ -30,6 +26,13 @@ entries:
     - title: Interface Overview
       url: /development_overview.html
       output: web    
+    - title: Consent
+      url: /development_elements.html
+      output: web
+    - title: capabilityStatement
+      url: /foundations_use_case_get_the_fhir_conformance_profile.html
+      output: web  
+      
       subfolders:         
       - title: Security & Privacy
         output: web
@@ -39,31 +42,62 @@ entries:
           output: web
         - title: Cross Organization Audit & Provenance using JWT
           url: /development_security_jwt.html
-          output: web   
-      
-      - title: Foundations
-        output: web
-        subfolderitems:
-        - title: Consent
-          url: /development_elements.html
-          output: web
-        - title: capabilityStatement
-          url: /foundations_use_case_get_the_fhir_conformance_profile.html
-          output: web
+          output: web             
            
       - title: API Guidance | FHIR&reg; 
         output: web
         subfolderitems:
-        - title: RESTful Interactions
-          url: /development_interactions.html
-          output: web 
         - title: Open Source
           url: /development_fhir_open_source_guidance.html
           output: web   
-    - title: Reference
-      url: /development_deliverables.html
-      output: web 
-        
+        - title: Reference
+          url: /development_deliverables.html
+          output: web 
+
+  - title: Design & Build
+    output: web
+    folderitems:
+    - title: Overview
+      url: /design.html
+      output: web
+    - title: Open Source
+      url: /design_open_source.html
+      output: web
+      subfolders:
+      - title: Build
+        output: web
+        subfolderitems:
+          - title: Consent REST Interactions
+            url: /build_consent_restful.html
+            output: web
+          - title: Consent Code Examples
+            url: /build_code_organization.html
+            output: web         
+          
+  - title: Test
+    output: web
+    folderitems:
+    - title: Overview
+      url: /test.html
+      output: web
+ 
+  - title: Assure
+    output: web
+    folderitems:
+    - title: Overview
+      url: /assure.html
+      output: web
+
+  - title: Deploy
+    output: web
+    folderitems:
+    - title: Overview
+      url: /deploy.html
+      output: web      
+
+
+
+ 
   - title: Tags
     output: web
     folderitems:
@@ -72,9 +106,6 @@ entries:
       output: web
     - title: FHIR&reg;
       url: /tag_fhir.html
-      output: web
-    - title: Use Case
-      url: /tag_use_case.html
       output: web
     - title: Design
       url: /tag_design.html

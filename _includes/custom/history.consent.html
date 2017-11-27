@@ -14,7 +14,7 @@ Return all historic {{include.resource}} instances for a patient with a logical 
 </div>
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET {{include.base}}{{include.resource}}?[patient]&[purpose]_history</div>
+GET {{include.base}}{{include.resource}}/_history/?[patient]&[purpose]</div>
 
 <div class="language-http highlighter-rouge">
 <pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/_history?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104&purpose=RESCH
@@ -24,7 +24,7 @@ Return all historic {{include.resource}} instances for a patient with reference 
 
 <p>Example below demonstrates a vread to retrieve a specific historical consent instance</p>
 <div markdown="span" class="alert alert-success" role="alert">
-GET {{include.base}}{{include.resource}}/[id]_history[vid]</div>
+GET {{include.base}}{{include.resource}}/[id]/_history/[vid]</div>
 
 <div class="language-http highlighter-rouge">
 <pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/133552f9-7aaf-485f-a91a-bdfc0a367409/_history/6ed33184-56ab-450f-98c5-8f86d7310766

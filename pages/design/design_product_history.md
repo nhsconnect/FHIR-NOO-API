@@ -6,6 +6,11 @@ sidebar: overview_sidebar
 permalink: design_product_history.html
 summary: History of changes to the National Data Opt-out API.
 ---
+### Version 1.5.0-alpha.0
+
+- Category is no longer a requirement for NDOP API and has been removed from guide
+- Correction to REST history syntax 
+- Added generic assure, test and deploy pages used across all APIs
 
 ### Version 1.4.0-alpha.0
 
