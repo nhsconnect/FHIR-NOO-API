@@ -10,8 +10,6 @@ summary: A brief introduction to getting started with the National Data Opt-out 
 
 {% include important.html content="This site is under active development by the interoperability messaging team and is intended to provide all the technical resources you need to successfully deploy a National Data Opt-out Programme Profile. Some areas are being formulated and iterative updates to content will be added on a regular basis." %}
 
-{% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in the development of the National Data Opt-out Programme FHIR&reg; API. It is advised not to develop against these specifications until a formal announcement has been made." %}
-
 # Background #
 
 The National Data Opt-out Programme (NDOP) is a product of the National Data Guardian (NDG) review on data security and how individuals' data is used and shared by healthcare organizations.  NDOP has been created to provide a model that will allow each individual patient to have control over specific data, being able to choose the purposes for which data can be shared.
