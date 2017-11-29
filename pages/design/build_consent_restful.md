@@ -145,7 +145,7 @@ Assuming successful URL submission, there are several possible responses to the 
 
 Failure:
 
-- SHALL return one of the below HTTP status error codes with an OperationOutcome resource that conforms to the `spine-operationoutcome-1` profile if the update cannot be executed.
+- SHALL return one of the below HTTP status error codes with an OperationOutcome resource that conforms to the `Spine-OperationOutcome-1` profile if the update cannot be executed.
 - The below table summarises the types of error that could occur, and the HTTP response codes, along with the values to expect in the OperationOutcome response body.
  
 |HTTP Code|issue-severity|issue-type|Details.Code|Details.Display|
