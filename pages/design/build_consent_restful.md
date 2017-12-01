@@ -160,7 +160,7 @@ Failure:
 <OperationOutcome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../Schemas/operationoutcome.xsd" xmlns="http://hl7.org/fhir">
 <id value="f19e4165-b379-4377-ad43-df65f609eba5"/>
 <meta>
-	<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/spine-operationoutcome-1"/>
+	<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Spine-OperationOutcome-1"/>
 </meta>
 <issue>
 	<severity value="error"/>
