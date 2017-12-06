@@ -25,6 +25,8 @@ Consumer system SHALL generate a new JWT for each API request.
 | reason_for_request | R | Purpose for which access is being requested | `optoutprefs` | No | |
 | requested_record | R | The FHIR consent resource being requested (i.e. NHS Number identifier details) | No | FHIR Consent | Consent-1 [Rendered](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1)[Example](https://nhsconnect.github.io/FHIR-NOO-API/Examples/Consent-Example-1.xml) |
 | requested_scopes | R | Data being requested | consent.read | No | |
+| requesting_device| R | FHIR device resource making the request | No | FHIR Device| TODO |
+| requestor_identity | R | Identity of the person or organization making request | No | NHS Number or ODS Code | TODO | 
 | requesting_actor | R | Reference to the person who is making the request | No | Reference | | |
 
 
@@ -51,7 +53,7 @@ The final output is three Base64 strings separated by dots (note - there is some
 For example:
 
 ```shell
-eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0LmV1LXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20vIy9zZWFyY2giLCJzdWIiOiIxIiwiYXVkIjoiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMubmV0L3Rva2VuIiwiZXhwIjoxNDgxMjUyMjc1LCJpYXQiOjE0ODA5NTIyNzUsInJlYXNvbl9mb3JfcmVxdWVzdCI6ImRpcmVjdGNhcmUiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6IlBhdGllbnQiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL25ocy1udW1iZXIiLCJ2YWx1ZSI6IjkwMDAwMDAwMzMifV19LCJyZXF1ZXN0ZWRfc2NvcGUiOiJwYXRpZW50LyoucmVhZCIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IldlYiBJbnRlcmZhY2UiLCJ2YWx1ZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn1dLCJtb2RlbCI6IkRlbW9uc3RyYXRvciIsInZlcnNpb24iOiIxLjAifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IltPRFNDb2RlXSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn0sInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjp7InJlc291cmNlVHlwZSI6IlByYWN0aXRpb25lciIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IkcxMzU3OTEzNSJ9LHsic3lzdGVtIjoibG9jYWxTeXN0ZW0iLCJ2YWx1ZSI6IjEifV0sIm5hbWUiOnsiZmFtaWx5IjpbIkRlbW9uc3RyYXRvciJdLCJnaXZlbiI6WyJHUENvbm5lY3QiXSwicHJlZml4IjpbIk1yIl19fX0.
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL1tDb25zdW1lclN5c3RlbVVSTF0iLCJzdWIiOiJbQWN0b3JSZWZlcmVuY2VdIiwiYXVkIjoiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMudWsvdG9rZW4iLCJleHAiOjE0Njk0MzY5ODcsImlhdCI6MTQ2OTQzNjY4NywicmVhc29uX2Zvcl9yZXF1ZXN0Ijoib3B0b3V0cHJlZnMiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6IkNvbnNlbnQiLCJwYXRpZW50IjpbeyJyZWZlcmVuY2UiOiJodHRwczovL2RlbW9ncmFwaGljcy5zcGluZXNlcnZpY2VzLm5ocy51ay9TVFUzL1BhdGllbnQvW25ocy1udW1iZXJdIn1dfSwicmVxdWVzdGVkX3Njb3BlcyI6ImNvbnNlbnQvKi5yZWFkIiwicmVxdWVzdGluZ19kZXZpY2UiOnsicmVzb3VyY2VUeXBlIjoiRGV2aWNlIiwiaWQiOiJbRGV2aWNlSURdIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiW0RldmljZVN5c3RlbV0iLCJ2YWx1ZSI6IltEZXZpY2VJRF0ifV0sInR5cGUiOiJbU05PTUVEQ1RDb2RlRm9yVHlwZU9mRGV2aWNlXSIsIm1vZGVsIjoiW1NvZnR3YXJlTmFtZV0iLCJ2ZXJzaW9uIjoiW1NvZnR3YXJlVmVyc2lvbl0ifSwicmVxdWVzdG9yX2lkZW50aXR5IjoiW1JlcXVlc3RvcklEXSIsInJlcXVlc3RpbmdfYWN0b3IiOiJbQWN0b3JSZWZlcmVuY2VdIn0.
 ```
 
 {% include tip.html content="The [JWT.io](https://jwt.io/) website includes a number of rich resources to aid in developing JWT enabled applications." %}
@@ -61,7 +63,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 ```json
 {
 	"iss": "https://[ConsumerSystemURL]",
-	"sub": "[ActorID]",
+	"sub": "[ActorReference]",
 	"aud": "https://authorize.fhir.nhs.uk/token",
 	"exp": 1469436987,
 	"iat": 1469436687,
@@ -69,15 +71,27 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 	"requested_record": {
 		"resourceType": "Consent",
 		"patient": [{
-			"reference": "https://demographics.spineservices.nhs.uk/[nhs-number]"
+			"reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/[nhs-number]"
 		}]
 	},
 	"requested_scopes": "consent/*.read",
-	"requesting_actor": "https://[reference]"
+	"requesting_device": {
+		"resourceType": "Device",
+		"id": "[DeviceID]",
+		"identifier": [{
+			"system": "[DeviceSystem]",
+			"value": "[DeviceID]"
+		}],
+		"type": "[SNOMEDCTCodeForTypeOfDevice]",
+		"model": "[SoftwareName]",
+		"version": "[SoftwareVersion]"
+	},
+	"requestor_identity": "[RequestorID]",
+	"requesting_actor": "[ActorReference]"
 }
 ```
 
-{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) NHS Digital hasn't commited to using the SMART on FHIR specification." %}
+{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) NHS Digital hasn't committed to using the SMART on FHIR specification." %}
 
 
 

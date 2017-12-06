@@ -22,7 +22,6 @@ Prior to creating a Consent record, a check MUST be carried out against that pat
 - ***Receiver:*** Spine 2
 - ***RESTful API Interaction:*** GET https://fhir.nhs.uk/STU3/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233
  
-**Note:** This interaction will search for any live Consent records. To limit this, a purpose code MAY be used e.g. GET https://fhir.nhs.uk/STU3/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233&purpose=PLAN
 
 **Responses**
 
@@ -54,7 +53,7 @@ Example below demonstrates a response where no record exists
 Where a record does exist:
 
 - HTTP 200-Request was successfully executed
-- Bundle resource of type *searchset* containing a maximum total value 2 Consent records (one PLAN and one RESCH), which would contain the unique logical id for each consent record.
+- Bundle resource of type *searchset* containing a maximum total value 1 Consent record.
 - The existence of a record requires an update interaction to overwrite the existing old record with a new version. The previous version will become historic. See [section 3](#section3) for updating an existing consent record using logical id.
 
 Example of bundle section containing searchset. Note that <id> in this section is the bundle id and NOT the consent id:
@@ -98,12 +97,6 @@ An example of a new record is displayed below:
 		</valueCodeableConcept>
 	</extension>
 	<status value="active"/>
-	<category>
-		<coding>
-			<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1"/>
-			<code value="NDOP"/>
-		</coding>
-	</category>
 	<patient>
 		<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
 	</patient>
@@ -127,9 +120,9 @@ An example of a new record is displayed below:
 		<uri value="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"/>
 	</policy>
 	<purpose>
-		<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1"/>
-		<code value="PLAN"/>
-		<display value="Opted out of Planning and Commisioning Data Sharing"/>
+		<system value="http://snomed.info/sct"/>
+		<code value="370856009"/>
+		<display value="Limiting access to confidential patient information"/>
 	</purpose>
 </Consent>
 ```
@@ -210,12 +203,6 @@ Example of updated Consent record body from [section 1](#section1). Only status 
 		</valueCodeableConcept>
 	</extension>
 	<status value="inactive"/>
-	<category>
-		<coding>
-			<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1"/>
-			<code value="NDOP"/>
-		</coding>
-	</category>
 	<patient>
 		<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
 	</patient>
@@ -239,9 +226,9 @@ Example of updated Consent record body from [section 1](#section1). Only status 
 		<uri value="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"/>
 	</policy>
 	<purpose>
-		<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1"/>
-		<code value="PLAN"/>
-		<display value="Opted out of Planning and Commisioning Data Sharing"/>
+		<system value="http://snomed.info/sct"/>
+		<code value="370856009"/>
+		<display value="Limiting access to confidential patient information"/>
 	</purpose>
 </Consent>
 ```
@@ -270,10 +257,7 @@ The client system performs a RESTful search interaction for current patient pref
 ---
 **Responses**
 
-The search results **MAY** return one, two or no instances of the patients National Data Opt-out preferences, depending on search parameters. Any instance that is returned **SHALL** have one of the following preferences:
-
-- RESCH - Research Opt-Out
-- PLAN - Planning and Commissioning Opt-Out
+The search results **MAY** return 1 or zero resource for the patients National Data Opt-out preferences.
 
 Assuming successful URL submission, there is one possible outcome to a search request:
 
@@ -312,10 +296,10 @@ The example below demonstrates the structure of a constructed XML body that can 
 {% include warning.html content="To prevent duplicate NDOP instances for a patient, implementers MUST perform a search prior to a create, to check for an existing instance, or use a conditional create for creating new instances."%}
 
 
-{% include custom/get.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="133552f9-7aaf-485f-a91a-bdfc0a367409" nhsno="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text3="RESCH"%}
+{% include custom/get.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="133552f9-7aaf-485f-a91a-bdfc0a367409" nhsno="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text3="370856009"%}
 
 {% include custom/put.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="PUT" id="133552f9-7aaf-485f-a91a-bdfc0a367409"%}
 
 ## Searching National Data Opt-out History ##
 
-{% include custom/history.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="785f7cc6-f63b-41fc-9bd4-2d09df5606f9" text1="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text2="RESCH" histid="6ed33184-56ab-450f-98c5-8f86d7310766"%}
+{% include custom/history.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="785f7cc6-f63b-41fc-9bd4-2d09df5606f9" text1="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text2="370856009" histid="6ed33184-56ab-450f-98c5-8f86d7310766"%}
