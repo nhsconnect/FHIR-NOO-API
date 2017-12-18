@@ -27,7 +27,7 @@ Consumer system SHALL generate a new JWT for each API request.
 | requested_scopes | R | Data being requested | consent.read | No | |
 | requesting_device| R | FHIR device resource making the request | No | FHIR Device| TODO |
 | requestor_identity | R | Identity of the person or organization making request | No | NHS Number or ODS Code | TODO | 
-| requesting_actor | R | Reference to the person who is making the request | No | Reference | | |
+
 
 
 #### JWT Generation ####
@@ -62,8 +62,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL1tDb25zdW1lclN5c3RlbVV
 
 ```json
 {
-	"iss": "https://[ConsumerSystemURL]",
-	"sub": "[ActorReference]",
+	"iss": "https://www.nhs.uk",
+	"sub": "National Data Opt-out Preferences",
 	"aud": "https://authorize.fhir.nhs.uk/token",
 	"exp": 1469436987,
 	"iat": 1469436687,
@@ -71,23 +71,36 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL1tDb25zdW1lclN5c3RlbVV
 	"requested_record": {
 		"resourceType": "Consent",
 		"patient": [{
-			"reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/[nhs-number]"
+			"reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/6101231234"
 		}]
 	},
 	"requested_scopes": "consent/*.read",
 	"requesting_device": {
 		"resourceType": "Device",
-		"id": "[DeviceID]",
-		"identifier": [{
-			"system": "[DeviceSystem]",
-			"value": "[DeviceID]"
-		}],
-		"type": "[SNOMEDCTCodeForTypeOfDevice]",
-		"model": "[SoftwareName]",
-		"version": "[SoftwareVersion]"
-	},
-	"requestor_identity": "[RequestorID]",
-	"requesting_actor": "[ActorReference]"
+  		"id": "009f0bf0-d434-11e6-9598-0800200c9a66",
+ 		"meta": {
+			"profile": [
+  	          "https://fhir.nhs.uk/StructureDefinition/audit-device-1"
+    		]
+  		},
+  		"identifier": [
+    	  {
+      		"id": "0b7677c0-d434-11e6-9598-0800200c9a66"
+    	  }
+  		],
+  		"type": {
+    	  "coding": [
+  		    {
+			"system": "http://snomed.info/sct",
+        	"code": "462240000",
+        	"display": "Patient health record information system (physical object)"
+  		    }
+  	  	  ]
+  		},
+		"model": "AA 1001-C",
+  		"version": "8.15-04"
+		},
+	"requestor_identity": "6101231234"
 }
 ```
 
