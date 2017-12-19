@@ -12,27 +12,29 @@ The diagram below demonstrates the REST interactions between a client and the ND
 
 <img src="images/NDOPInteractions2.png">
 
-{% include important.html content="To prevent duplicate NDOP instances for a patient, implementers MUST perform a search prior to a create, to check for an existing instance, or use a [conditional create](https://www.hl7.org/fhir/http.html#ccreate) for creating new instances."%}
+{% include important.html content="To prevent duplicate NDOP resources for a patient, implementers MUST perform a search prior to a create, to check for an existing instance, or use a [conditional create](https://www.hl7.org/fhir/http.html#ccreate) for creating new instances."%}
 
-## 1. Check for any existing National Data Opt-out record ##
+## 1. Check for any existing National Data Opt-out resource ##
 
-Prior to creating a Consent record, a check MUST be carried out against that patient to determine if any Consent records currently exist, to prevent duplication of records.
+Prior to creating a Consent resource, a check MUST be carried out against that patient to determine if any Consent resources currently exist, to prevent duplication of resources.
 
 - ***Sender:*** Any NDOP client
 - ***Receiver:*** Spine 2
-- ***RESTful API Interaction:*** GET https://fhir.nhs.uk/STU3/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233
- 
+
+```
+GET https://fhir.nhs.uk/STU3/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233
+``` 
 
 **Responses**
 
-Where a record does not exist:
+Where a resource does not exist:
 
 - HTTP 200-Request was successfully executed
 - Bundle resource of type *searchset* containing a total value of 0 Consent resources.
 
-This would indicate it is safe to create a Consent record for this patient. See [section 2](#section2) for register interaction. 
+This would indicate it is safe to create a Consent resource for this patient. See [section 2](#section2) for register interaction. 
 
-Example below demonstrates a response where no record exists 
+Example below demonstrates a response where no resource exists 
 
 ```xml
 <Bundle xmlns="http://hl7.org/fhir">
@@ -50,11 +52,11 @@ Example below demonstrates a response where no record exists
 </Bundle>
 ```
 
-Where a record does exist:
+Where a resource does exist:
 
 - HTTP 200-Request was successfully executed
-- Bundle resource of type *searchset* containing a maximum total value 1 Consent record.
-- The existence of a record requires an update interaction to overwrite the existing old record with a new version. The previous version will become historic. See [section 3](#section3) for updating an existing consent record using logical id.
+- Bundle resource of type *searchset* containing a maximum total value 1 Consent resource.
+- The existence of a resource requires an update interaction to overwrite the existing old resource with a new version. The previous version will become historic. See [section 3](#section3) for updating an existing consent resource using logical id.
 
 Example of bundle section containing searchset. Note that <id> in this section is the bundle id and NOT the consent id:
 
@@ -62,7 +64,7 @@ Example of bundle section containing searchset. Note that <id> in this section i
 
 <a id="section1"></a>
 
-The remaining section of the same XML contains the Consent record for the patient. The `<id>` here is the unique logical id for the consent record:
+The remaining section of the same XML contains the Consent resource for the patient. The `<id>` here is the unique logical id for the consent resource:
 
 <script src="https://gist.github.com/IOPS-DEV/a65f8f6e775f7c7c6cd3aa1bd340ef1d.js"></script>
 
@@ -70,16 +72,18 @@ The remaining section of the same XML contains the Consent record for the patien
 
 ## 2. Register Patients National Data Opt-out Preferences Interaction ##
 
-Where an existing Consent record does not exist, the client system will construct an XML body containing NDOP preferences and submit this to the Spine using a RESTful create interaction.
+Where an existing Consent resource does not exist, the client system will construct an XML body containing NDOP preferences and submit this to the Spine using a RESTful create interaction.
 
 - ***Sender:*** Any NDOP client
 - ***Receiver:*** Spine 2
-- ***RESTful API Interaction:*** POST https://fhir.nhs.uk/Consent
 
+```
+POST https://fhir.nhs.uk/Consent
+```
 
 {% include note.html content="Details on the FHIR RESTful specification for creating a new instance can be found here [RESTful Create](https://www.hl7.org/fhir/http.html#create)" %}
 
-An example of a new record is displayed below:
+An example of a new resource is displayed below:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -172,19 +176,22 @@ Failure:
 
 <a name="section3"></a>
 
-{% include warning.html content="Once a logical id has been assigned to the consent record, it is immutable. Any updates to the consent preferences will use this logical id" %}
+{% include warning.html content="Once a logical id has been assigned to the consent resource, it is immutable. Any updates to the consent preferences will use this logical id" %}
 
 ## 3. Update Patients Existing National Data Opt-out Preferences Interaction ##
 
-Where an Consent record exists, the client system will perform a REST update interaction to amend the patients National Data Opt-out preferences and submit a revised body to the NDOP service. The [logical id](#section1) from the searchset result in section 1 is used in the REST statement, to identify the patient record to be updated and MUST be included in the updated XML body.
+Where an Consent resource exists, the client system will perform a REST update interaction to amend the patients National Data Opt-out preferences and submit a revised body to the NDOP service. The [logical id](#section1) from the searchset result in section 1 is used in the REST statement, to identify the patient resource to be updated and MUST be included in the updated XML body.
 
 - ***Sender:***Any NDOP Client
 - ***Receiver:***Spine 2
-- ***RESTful API Interaction:***PUT https://[fhir.nhs.uk]/Consent/[logical id] 
+
+```
+PUT https://[fhir.nhs.uk]/Consent/[logical id] 
+```
 
 The entire XML body will be replaced with a new version to include one or more changes, in addition to the <id> element. Unchanged data MUST still be included.
 
-Example of updated Consent record body from [section 1](#section1). Only status has changed from active to inactive. All other data remains unchanged.
+Example of updated Consent resource body from [section 1](#section1). Only status has changed from active to inactive. All other data remains unchanged.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -250,8 +257,10 @@ The client system performs a RESTful search interaction for current patient pref
 
 - ***Sender:***Any NDOP Client
 - ***Receiver:***Spine 2
-- ***RESTful API Interaction:***GET https://[fhir.nhs.uk]/Consent[parameters] 
-
+ 
+```
+GET https://[fhir.nhs.uk]/Consent[parameters] 
+```
 
 {% include note.html content="Details on the FHIR RESTful specification for reading an instance can be found here [RESTful Read](https://www.hl7.org/fhir/http.html#read)" %}
 ---
@@ -265,7 +274,7 @@ Assuming successful URL submission, there is one possible outcome to a search re
 
 The NDOP FHIR server determines which of the set of resources it serves meet the specific criteria, and returns the results of the search in the HTTP response as a 'searchset' bundle or as single consent resource.
 
-Note: Although an HTTP response 200 OK indicates the request was successful, the bundle could return a 0 (zero) total value indicating no records were found. An XML example of a Bundle with a 0 (zero) total value indicating no record was found is shown below.
+Note: Although an HTTP response 200 OK indicates the request was successful, the bundle could return a 0 (zero) total value indicating no resources were found. An XML example of a Bundle with a 0 (zero) total value indicating no resource was found is shown below.
 
 ```xml
 <Bundle xmlns="http://hl7.org/fhir">
