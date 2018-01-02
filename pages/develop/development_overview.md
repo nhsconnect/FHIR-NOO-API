@@ -10,7 +10,7 @@ toc: false
 
 ## NDOP API Overview ##
 
-This section provides National Data Opt-out Programme (NDOP) implementers with an overview of the NDOP API messaging interface also known as the ‘National Data Opt-out Programme’.
+This section provides implementers of the National Data Opt-out Programme (NDOP) API messaging interface.
 
 The NDOP API supports the following functionality:
 

@@ -9,15 +9,15 @@ summary: "low level details for the care connect patient 'SourceOfOptOut' extens
 
 ### Element Usage ###
 
-The SourceOfOptOut extension is used to capture the mechanism used to set the patients national opt-out preferences. This extension is used in conjunction with a series of codes stored within a valueset. 
+The SourceOfOptOut extension is used to capture the mechanism used to set the patients National Data Opt-out preferences. Valid codes are taken from the CodeSystem [https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1).
 
 ### SourceOfOptOut ###
 
 |Type|name|Data Type|Description|
 | ------------- | ------------- | ------------- | ------------- |
-| Extension| Extension-SourceOfOptOut-1| Coding | Mechanism used to capture patient national opt-out preferences |
+| Extension| Extension-SourceOfOptOut-1| Coding | Mechanism used to capture patient National Data Opt-out preferences |
 
-## Valueset 
+## CodeSystem 
 
 National Data Opt-out supports the following source of opt-out codes:
 
@@ -76,12 +76,7 @@ On the wire example in JSON
 
 *Error Handling*
 
-The provider system SHALL return an error if:
-
-- The `birthDate` value does not comply with the aforementioned format.
-- The `birthDate` value is omitted.
-- The `birthDate` value is an invalid date.
-
+HTTP response codes will determine the success or failure of the POST operation. No element specific codes will be generated upon failure to POST.
 
 
 

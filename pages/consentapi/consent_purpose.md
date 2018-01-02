@@ -9,7 +9,7 @@ summary: "low level details for the National Data Opt-out 'purpose' element"
 
 ### Element Usage ###
 
-purpose uses the Consent.purpose element to set the opt-out preferences that the patient has chosen. 
+purpose uses the Consent.purpose element to set the Opt-out preferences that the patient has chosen. Valid codes are taken from the CodeSystem [https://snomed.info/sct](https://snomed.info/sct).
 
 ### status ###
 
@@ -21,22 +21,22 @@ purpose uses the Consent.purpose element to set the opt-out preferences that the
 Example of correct usage
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`purpose`| RESCH|A consent record record exists for research and planning. |
+|![Tick](images/tick.png)|`purpose`| 370856009|SNOMED CT code used to describe the consent purpose.  |
 
 Examples of incorrect usage
 
 |Usage| Element| examples| Comments|
-|![Cross](images/cross.png)|`purpose`| HRESCH|This code is not valid when used with the https://fhir.nhs.uk/ValueSet/ndop-preferences-1 valueset|
+|![Cross](images/cross.png)|`purpose`| HRESCH|This code is taken from the default codesystem and is not supported.|
 
 
 XML example
 
 ```xml
-    <purpose>
-        <system value="https://fhir.nhs.uk/ndop-preference-codes-1"/>
-        <code value="RESCH"/>
-        <display value="healthcare research"/>
-    </purpose>
+	<purpose>
+		<system value="https://snomed.info/sct"/>
+		<code value="370856009"/>
+		<display value="Limiting access to confidential patient information"/>
+	</purpose>
 ```
 
 JSON example
@@ -45,9 +45,9 @@ JSON example
 {
   "purpose": [
 	{
-    "system": "https://fhir.nhs.uk/ndop-preference-codes-1",
-    "code": "RESCH",
-    "display": "healthcare research"
+    "system": "https://snomed.info/sct",
+    "code": "370856009",
+    "display": "Limiting access to confidential patient information"
   }
  ]
 }

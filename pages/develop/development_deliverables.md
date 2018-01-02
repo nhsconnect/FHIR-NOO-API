@@ -4,46 +4,45 @@ keywords: development Reference
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_deliverables.html
-summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of National Data Opt-out API."
+summary: "Developer Cheat Sheet shortcuts for the technical build of National Data Opt-out API."
 ---
 
 # National Data Opt-out Profiles:
 
 |Profile| 
 |-------|
-| [NDOP-Consent-1](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1) | 
+|[NDOP-Consent-1](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1) | 
+|[Spine-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/Spine-OperationOutcome-1) | 
 
 # National Data Opt-out Extensions
 
 |Extension|
 |---------|
-| [Extension-NDOP-ActorPerson-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-ActorPerson-1)|
+| [Extension-NDOP-ProxyRole-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-ProxyRole-1)|
 | [Extension-NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1)|
 
 
-# National Data Opt-out Valesets
+# National Data Opt-out Valuesets
 
 |Valueset|Description|
 |-------|-----------|
-|[NDOP-Category-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Category-1)|
-|[NDOP-Preferences-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-Preferences-1)|
-|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|
+|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|How the Opt-out preference was set e.g Online, GP, etc.|
+|[NDOP-ProxyRole-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1)|The role of a proxy where used to set  Opt-out preferences|
+|[Spine-ErrorOrWarningCode-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1)|Spine error codes|
 
 # National Data Opt-out CodeSystems
 
 |CodeSystem|Description|
 |-------|-----------|
-|[NDOP-Categories-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-Categories-1)|
-|[NDOP-PreferencesCodes-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-PreferenceCodes-1)|
-|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|
+|[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|List of Opt-out sources|
+|[NDOP-CCProxyRole-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-CCProxyRoles-1)|List of proxy roles used by contact centre or GP practice|
+|[Spine-ErrorOrWarningCode-1](https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1)|Spine error codes and descriptions.|
 
 # Identifiers #
 
 | identifier | URI | Comment |
 |--------------------------------------------|----------|----|
-| `Logical ID` | https://fhir.nhs.uk/Consent/[id] | Consent record identifier |
 | `Patient` | https://demographics.spineservices.nhs.uk/STU3/Patient/[NHS Number] | Patient |
-|`actor`|https://demographics.spineservices.nhs.uk/STU3/Patient/[NHS Number] or https://directory.spineservices.nhs.uk/STU3/Organization/[Org Code] | Patient or Practitioner|
 |`organization`|https://directory.spineservices.nhs.uk/STU3/Organization/[Org Code] |NHS Digital (X26)|
 
 

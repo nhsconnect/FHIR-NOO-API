@@ -9,7 +9,7 @@ summary: "low level details for the National Data Opt-out 'organization' element
 
 ### Element Usage ###
 
-National Data Opt-out uses consent.organization to capture the custodian organization that manages the consent. This will be a fixed value of NHS Digital.
+National Data Opt-out uses consent.organization to capture the custodian organization that manages the consent. This will be a fixed value of X26 which is the ODS code for NHS Digital.
 
 ### organization ###
 
