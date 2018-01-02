@@ -8,7 +8,7 @@ toc: true
 summary: A brief introduction to getting started with the National Data Opt-out Programme FHIR&reg; API
 ---
 
-{% include important.html content="This site is under active development by the interoperability messaging team and is intended to provide all the technical resources you need to successfully deploy a National Data Opt-out Programme Profile. Some areas are being formulated and iterative updates to content will be added on a regular basis." %}
+{% include important.html content="This site is under active development by the interoperability messaging team and is intended to provide all the technical resources you need to successfully deploy a National Data Opt-out Programme API. Some areas are being formulated and iterative updates to content will be added on a regular basis." %}
 
 # Background #
 

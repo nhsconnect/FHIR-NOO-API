@@ -12,7 +12,9 @@ The diagram below demonstrates the REST interactions between a client and the ND
 
 <img src="images/NDOPInteractions2.png">
 
-{% include important.html content="To prevent duplicate NDOP resources for a patient, implementers MUST perform a search prior to a create, to check for an existing instance, or use a [conditional create](https://www.hl7.org/fhir/http.html#ccreate) for creating new instances."%}
+{% include important.html content="To prevent duplicate NDOP resources for a patient, implementers MUST perform a search prior to a create, to check for an existing instance."%}
+
+<a name="section1"></a>
 
 ## 1. Check for any existing National Data Opt-out resource ##
 
@@ -56,7 +58,7 @@ Where a resource does exist:
 
 - HTTP 200-Request was successfully executed
 - Bundle resource of type *searchset* containing a maximum total value 1 Consent resource.
-- The existence of a resource requires an update interaction to overwrite the existing old resource with a new version. The previous version will become historic. See [section 3](#section3) for updating an existing consent resource using logical id.
+- The existence of a resource requires an update interaction to overwrite the existing old resource with a new version. The previous version will become historic. See the section titled [Update Patient’s Existing National Data Opt-out Preferences Interaction](#section3) for information on updating an existing consent resource using logical id.
 
 Example of bundle section containing searchset. Note that <id> in this section is the bundle id and NOT the consent id:
 
@@ -70,7 +72,7 @@ The remaining section of the same XML contains the Consent resource for the pati
 
 <a name="section2"></a>
 
-## 2. Register Patients National Data Opt-out Preferences Interaction ##
+## 2. Register Patient's National Data Opt-out Preferences Interaction ##
 
 Where an existing Consent resource does not exist, the client system will construct an XML body containing NDOP preferences and submit this to the Spine using a RESTful create interaction.
 
@@ -136,7 +138,7 @@ An example of a new resource is displayed below:
 
 Success:
 
-Assuming successful URL submission, there are several possible responses to the NDOP request:
+Assuming successful HTTP POST, there are several possible responses to the NDOP request:
 
 - HTTP 201-Record Created: The entry has been successfully created and the NDOP returns an HTTP Location header containing the 'server' assigned logical Id of the created resource.
 
@@ -178,20 +180,20 @@ Failure:
 
 {% include warning.html content="Once a logical id has been assigned to the consent resource, it is immutable. Any updates to the consent preferences will use this logical id" %}
 
-## 3. Update Patients Existing National Data Opt-out Preferences Interaction ##
+## 3. Update Patient's Existing National Data Opt-out Preferences Interaction ##
 
-Where an Consent resource exists, the client system will perform a REST update interaction to amend the patients National Data Opt-out preferences and submit a revised body to the NDOP service. The [logical id](#section1) from the searchset result in section 1 is used in the REST statement, to identify the patient resource to be updated and MUST be included in the updated XML body.
+Where a Consent resource exists, the client system will perform a REST update interaction to amend the patient's National Data Opt-out preferences and submit a revised body to the NDOP service. The [logical id](#section1) from the searchset result described in the section titled ['Check for any existing National Data Opt-out resource'](#section1) is used in the REST statement, to identify the patient resource to be updated and MUST be included in the updated XML body.
 
 - ***Sender:***Any NDOP Client
 - ***Receiver:***Spine 2
 
 ```
-PUT https://[fhir.nhs.uk]/Consent/[logical id] 
+PUT https://[base url]/Consent/[logical id] 
 ```
 
 The entire XML body will be replaced with a new version to include one or more changes, in addition to the <id> element. Unchanged data MUST still be included.
 
-Example of updated Consent resource body from [section 1](#section1). Only status has changed from active to inactive. All other data remains unchanged.
+Example of updated Consent resource body from example provided in section titled [Check for any existing National Data Opt-out resource](#section1). Only status has changed from active to inactive. All other data remains unchanged.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -244,14 +246,15 @@ Example of updated Consent resource body from [section 1](#section1). Only statu
 
 **Responses**
 
-Assuming successful URL submission, there are several possible responses to the NDOP request:
+Assuming successful HTTP PUT, there are several possible responses to the NDOP request:
 
 - HTTP 200-OK: The entry has been successfully updated and the NDOP returns an HTTP Location header containing the 'server' assigned logical Id of the updated resource.
 - HTTP 400-Bad Request: Resource could not be parsed or failed basic FHIR validation rules
+- HTTP 404-Resource Not Found: An atempted was made to update a resource which does not exist. 
 - HTTP 422-Unprocessable Entity: The proposed resource violated applicable FHIR profiles or server business rules.
 
 
-## 4. Retrieve Patients National Data Opt-out Preferences Interaction ##
+## 4. Retrieve Patient's National Data Opt-out Preferences Interaction ##
 
 The client system performs a RESTful search interaction for current patient preferences located on the National Data Opt-out service.
 
@@ -259,16 +262,16 @@ The client system performs a RESTful search interaction for current patient pref
 - ***Receiver:***Spine 2
  
 ```
-GET https://[fhir.nhs.uk]/Consent[parameters] 
+GET https://[base url]/Consent[parameters] 
 ```
 
 {% include note.html content="Details on the FHIR RESTful specification for reading an instance can be found here [RESTful Read](https://www.hl7.org/fhir/http.html#read)" %}
 ---
 **Responses**
 
-The search results **MAY** return 1 or zero resource for the patients National Data Opt-out preferences.
+The search results **MAY** return 1 or zero resource for the patient's National Data Opt-out preferences.
 
-Assuming successful URL submission, there is one possible outcome to a search request:
+Assuming successful HTTP POST, there is one possible outcome to a search request:
 
 - HTTP 200-Request was successfully executed
 
