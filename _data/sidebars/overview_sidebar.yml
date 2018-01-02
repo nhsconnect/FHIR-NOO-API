@@ -23,9 +23,6 @@ entries:
   - title: Engage
     output: web
     folderitems:
-    - title: User Stories
-      url: /engage_user_stories.html
-      output: web
     - title: Case Studies
       url: /engage_case_studies.html
       output: web

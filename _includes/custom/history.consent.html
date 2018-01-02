@@ -1,6 +1,6 @@
 <h3 id="history">{{include.content2}}</h3>
 
-<p>Return the historic instances for a given logical ID. This will return a set of versions of the resource representing each change in state for a single patient’s preference for a single ‘purpose’, with each version of the resource  indicating whether that change in state made the opt-out ‘active’ or ‘inactive’</p>
+<p>The history interaction retrieves the history of the Consent resource. When a Consent resource is created or updated, a new history entry is created, with each entry being uniquely identifiable by its version identifier (vid). By supporting the history interaction, it will be possible to provide an audit trail of changes made to the patients Consent preference.’</p>
 
 <div markdown="span" class="alert alert-success" role="alert">
 GET {{include.base}}{{include.resource}}/[ID]/_history</div>

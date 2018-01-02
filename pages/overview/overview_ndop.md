@@ -16,7 +16,7 @@ The government responded to the NDG review with [Your Data: Better Security, Bet
 
 NHS Digital will provide an online application that will allow patients to choose if they wish to only allow their personally identifiable data used for their care and treatment, or if they wish to allow their data to be shared with other healthcare organisations for planning and research purposes. Additional mechanisms for setting opt-out preferences will be provided along side the online application.
 
-Rollout of the National Data opt-out is expected to commence in March 2018.
+The Rollout of the National Data opt-out is expected to commence in March 2018.
 
 
 Further information on the NHS Digital involvement can be found at the [National Data Opt-out Programme](https://digital.nhs.uk/national-data-opt-out)

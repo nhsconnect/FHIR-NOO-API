@@ -34,12 +34,10 @@ Fetches a bundle of all `Consent` resources for the specified search criteria.
 |Name|Data Type|Card|Description|Value|
 |----|---------|----|-----------|-----|
 |[`id`](consent_id.html)|string|1..1|Logical id assigned by the FHIR server|Any UUID|
-|[`identifier`](identifier.html)|identifier|0..1|OPTIONAL consent identifier|An alternative method for identifying a resource|
-|[`category`](category.html)|CodeableConcept|0..1|OPTIONAL category|MAY be used to categorise future Opt-outs|
 |[`status`](consent_status.html)|string|1..1|The current status of the consent instance|active,inactive|
 |[`patient`](consent_patient.html)|Reference|1..1|Spine reference to the patients NHS number traced from PDS|
 |[`dateTime`](consent_datetime.html)|dateTime|1..1|Date and time instance was last updated|Date+Time+TimeZone|
-|[`consentingParty`](consent_consentingParty.html)|reference|0..1|Use where patient is the consenting party.|MUST be a patient URL|
+|[`consentingParty`](consentingParty.html)|reference|0..1|Use where patient is the consenting party.|MUST be a patient URL|
 |[`organization`](consent_organization.html)|Reference|1..1|Spine reference to the NHS Digital ODS code|MUST be a URL|
 |[`policy`](consent_policy.html)|uri|1..1|Policy that the consent refers to|Should be able to resolve policy url|
 |[`purpose`](consent_purpose.html)|Coding|1..1|Contains Opt-Out purpose defined using SNOMED CT|370856009|

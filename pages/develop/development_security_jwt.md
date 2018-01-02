@@ -9,7 +9,7 @@ summary: "Overview of how audit and provenance data is expected to be transporte
 
 ## Cross Organisation Audit & Provenance using JWT ##
 
-Consumer systems SHALL provided audit and provenance details in the HTTP authorization header as an oAuth bearer token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+Consumer systems SHALL provide audit and provenance details in the HTTP authorization header as an oAuth bearer token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
 
 An example such an HTTP header is given below:
 
@@ -17,7 +17,7 @@ An example such an HTTP header is given below:
      Authorization: Bearer jwt_token_string
 ```
 
-In future, national authentication and authorisation services will be made available which will issue a bearer token which can be used directly for accessing this API. In the interrim however, the client will need to construct the JWT themselves.
+In future, national authentication and authorisation services will be made available which will issue a bearer token which can be used directly for accessing this API. In the interim however, the client will need to construct the JWT themselves.
 
 It is highly recommended that standard libraries are used for creating the JWT as constructing and encoding the token manually may lead to issues with parsing the token in Spine. A good source of information about JWT and libraries to use can be found on the [JWT.io site](https://jwt.io/)
 
