@@ -1,21 +1,21 @@
 ---
-title: consentingpartyrole extension
+title: consentingproxyrole extension
 keywords: source, extension
 tags: [source,extension]
 sidebar: profiles_sidebar
-permalink: consent_extension_consentingpartyrole.html
-summary: "low level details for the consent 'consentingPartyRole' extension"
+permalink: consent_extension_consentingproxyrole.html
+summary: "low level details for the consent 'consentingProxyRole' extension"
 ---
 
 ### Element Usage ###
 
-The conseingPartyRole extension is used to capture a patients proxys role that they play whilst setting the patients Opt-out preferences. This could be a parent defining their childs preference at a GP practice or a Court Approved deputy defining an adults preference. 
+The conseningProxyRole extension is used to capture a patients proxys role that they play whilst setting the patients Opt-out preferences. This could be a parent defining their childs preference at a GP practice or a Court Approved deputy defining an adults preference. 
  
-### consentingPartyRole ###
+### consentingProxyRole ###
 
 |Type|name|Data Type|Description|
 | ------------- | ------------- | ------------- | ------------- |
-| Extension| Extension-consentingPartyRole-1| CodeableConcept | Mechanism used to capture a proxys role whilst defining a patients opt-out preference|
+| Extension| Extension-consentingProxyRole-1| CodeableConcept | Mechanism used to capture a proxy role whilst defining a patients opt-out preference|
 |Complex.extension|role|CodeableConcept|The role played by a proxy. Uses https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1|
 |Complex.extension|NIC|string|Where a preference was set by a proxy via a contact centre a NIC reference may be provided|
 
@@ -23,12 +23,12 @@ The conseingPartyRole extension is used to capture a patients proxys role that t
 **Example of Correct Usage**
 
 |Usage| Element| examples| Comments|
-|![Tick](images/tick.png)|`Extension-NDOP-consentingPartyRole-1`| GUARDIAN |Patients legally approved guardian|
+|![Tick](images/tick.png)|`Extension-NDOP-consentingProxyRole-1`| GUARDIAN |Patients legally approved guardian|
 
 **Example of Incorrect Usage**
 
 |Usage| Element| examples| Comments|
-|![Cross](images/cross.png)|`Extension-NDOP-consentingPartyRole-1`|GP|GP is not a supported proxy role|
+|![Cross](images/cross.png)|`Extension-NDOP-consentingProxyRole-1`|GP|GP is not a supported proxy role|
 
 
 On the wire XML example

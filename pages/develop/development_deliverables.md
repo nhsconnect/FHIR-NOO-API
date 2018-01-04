@@ -27,7 +27,7 @@ summary: "Developer Cheat Sheet shortcuts for the technical build of National Da
 |Valueset|Description|
 |-------|-----------|
 |[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-OptOutSource-1)|How the Opt-out preference was set e.g Online, GP, etc.|
-|[NDOP-ProxyRole-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1)|The role of a proxy where used to set  Opt-out preferences|
+|[NDOP-ProxyRole-1](https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1)|The role of a proxy where used to set Opt-out preferences|
 |[Spine-ErrorOrWarningCode-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1)|Spine error codes|
 
 # National Data Opt-out CodeSystems
@@ -35,7 +35,7 @@ summary: "Developer Cheat Sheet shortcuts for the technical build of National Da
 |CodeSystem|Description|
 |-------|-----------|
 |[NDOP-OptOutSource-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1)|List of Opt-out sources|
-|[NDOP-CCProxyRole-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-CCProxyRoles-1)|List of proxy roles used by contact centre or GP practice|
+|[NDOP-ProxyRole-1](https://fhir.nhs.uk/STU3/CodeSystem/NDOP-ProxyRoles-1)|List of approved proxy roles|
 |[Spine-ErrorOrWarningCode-1](https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1)|Spine error codes and descriptions.|
 
 # Identifiers #
