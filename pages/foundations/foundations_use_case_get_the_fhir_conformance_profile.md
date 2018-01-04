@@ -10,7 +10,7 @@ summary: "Use case for getting the FHIR server's capability statement profile."
 {% include important.html content="The capabilityStatement provided is based on the requirements for the National Data Opt-out API. How this is implemented is outside the scope of this guide" %}
 
 
-###Example capabilityStatement
+### Example capabilityStatement
 
 
 <script src="https://gist.github.com/IOPS-DEV/af36c2f3f03a2b0641af9961f46073ea.js"></script>
