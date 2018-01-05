@@ -1,0 +1,66 @@
+{
+  "resourceType": "Consent",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1",
+            "code": "OP",
+            "display": "Online Portal"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-Proxy-1",
+      "extension": [
+        {
+          "url": "role",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1",
+                "code": "POA",
+                "display": "Power of Attorney"
+              }
+            ]
+          }
+        },
+        {
+          "url": "NIC",
+          "valueString": "12345-C"
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "patient": {
+    "reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"
+  },
+  "dateTime": "2017-12-14T11:15:33+00:00",
+  "organization": [
+    {
+      "reference": "https://directory.spineservices.nhs.uk/STU3/Organization/X26"
+    }
+  ],
+  "policy": [
+    {
+      "authority": "https://www.gov.uk/",
+      "uri": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"
+    }
+  ],
+  "purpose": [
+    {
+      "system": "https://snomed.info/sct",
+      "code": "370856009",
+      "display": "Limiting access to confidential patient information"
+    }
+  ]
+}

@@ -9,15 +9,25 @@ summary: "low level details for the consent 'consentingProxyRole' extension"
 
 ### Element Usage ###
 
-The conseningProxyRole extension is used to capture a patients proxys role that they play whilst setting the patients Opt-out preferences. This could be a parent defining their childs preference at a GP practice or a Court Approved deputy defining an adults preference. 
+The conseningProxyRole extension is used to capture a patients proxys role that they play whilst setting the patients Opt-out preferences. This could be a parent defining their childs preference at a GP practice or a Court Approved deputy defining an adults preference. An optional National Information Centre (NIC) number may also be captured to provide reference to the CRM case. 
  
 ### consentingProxyRole ###
 
 |Type|name|Data Type|Description|
 | ------------- | ------------- | ------------- | ------------- |
 | Extension| Extension-consentingProxyRole-1| CodeableConcept | Mechanism used to capture a proxy role whilst defining a patients opt-out preference|
-|Complex.extension|role|CodeableConcept|The role played by a proxy. Uses https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1|
+|Complex.extension|role|CodeableConcept|The role played by a proxy. Uses valueset https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1|
 |Complex.extension|NIC|string|Where a preference was set by a proxy via a contact centre a NIC reference may be provided|
+
+### CodeSystem
+
+National Data opt-out supports the following proxy role codes:
+
+|Code|Display|
+|----|-------|
+|GUARDIAN|Guardian|
+|POA|Power of Attorney|
+|COURTDEP|Court Appointed Deputy|
 
 
 **Example of Correct Usage**
@@ -28,7 +38,7 @@ The conseningProxyRole extension is used to capture a patients proxys role that 
 **Example of Incorrect Usage**
 
 |Usage| Element| examples| Comments|
-|![Cross](images/cross.png)|`Extension-NDOP-consentingProxyRole-1`|GP|GP is not a supported proxy role|
+|![Cross](images/cross.png)|`Extension-NDOP-consentingProxyRole-1`|Mother|Mother is not a supported proxy role. Use GUARDIAN|
 
 
 On the wire XML example
@@ -54,19 +64,22 @@ On the wire example in JSON
 
 ```json
 {
-      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-Proxy-1",
-      "extension": [
-        {
-          "url": "role",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1",
-                "code": "POA",
-                "display": "Power of Attorney"
-              }
-            ]
-          }
+   	"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-Proxy-1",
+   	"extension": [{
+   			"url": "role",
+   			"valueCodeableConcept": {
+   				"coding": [{
+    				"system": "https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1",
+    				"code": "POA",
+    				"display": "Power of Attorney"
+    			}]
+    		}
+    	},
+    	{
+    		"url": "NIC",
+    		"valueString": "12345-C"
+    	}
+   	]
 }
 ```
 
