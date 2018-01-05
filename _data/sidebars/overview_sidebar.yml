@@ -73,7 +73,10 @@ entries:
         subfolderitems:
           - title: Consent REST Interactions
             url: /build_consent_restful.html
-            output: web     
+            output: web    
+          - title: Business Rules
+            url: /build_consent_business_rules.html
+            output: web  
           
   - title: Test
     output: web
