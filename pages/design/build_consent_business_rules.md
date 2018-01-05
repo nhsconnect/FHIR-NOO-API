@@ -15,8 +15,8 @@ The element consentingParty MUST only be populated when the extension consenting
 
 The grid below provides a visual indicator for acceptable usage
 
-||consentingParty|consentingProxyRole|Permitted|
-|Populated|Yes|No|![Tick](images/tick.png)|
-||No|Yes|![Tick](images/tick.png)|
-||Yes|Yes|![Cross](images/cross.png)|
-||No|No|![Cross](images/cross.png)|
+|consentingParty|consentingProxyRole|Permitted|
+|Yes|No|![Tick](images/tick.png)|
+|No|Yes|![Tick](images/tick.png)|
+|Yes|Yes|![Cross](images/cross.png)|
+|No|No|![Cross](images/cross.png)|
