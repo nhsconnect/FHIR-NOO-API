@@ -1,0 +1,16 @@
+{
+  "resourceType": "Bundle",
+  "id": "de258b7f-2f0b-4b41-afcb-964d9995fd4f",
+  "meta": {
+    "versionId": "8c8263ee-f582-4d08-bf84-46d016127552",
+    "lastUpdated": "2017-11-16T11:18:41.61+00:00"
+  },
+  "type": "searchset",
+  "total": 0,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://localhost:4080/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233&_format=xml"
+    }
+  ]
+}
