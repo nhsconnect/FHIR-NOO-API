@@ -1,0 +1,13 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="de258b7f-2f0b-4b41-afcb-964d9995fd4f"/>
+	<meta>
+		<versionId value="8c8263ee-f582-4d08-bf84-46d016127552"/>
+		<lastUpdated value="2017-11-16T11:18:41.61+00:00"/>
+	</meta>
+	<type value="searchset"/>
+	<total value="0"/>
+	<link>
+		<relation value="self"/>
+		<url value="http://localhost:4080/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233&amp;_format=xml"/>
+	</link>
+</Bundle>

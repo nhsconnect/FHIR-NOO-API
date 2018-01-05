@@ -1,0 +1,58 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="dd9724d1-7b61-44e2-9023-b72e6b966018"/>
+	<meta>
+		<versionId value="1c268b27-fcd9-45fc-92f7-3781b63c2593"/>
+		<lastUpdated value="2017-11-16T11:23:06.269+00:00"/>
+	</meta>
+	<type value="searchset"/>
+	<total value="1"/>**
+	<link>
+		<relation value="self"/>
+		<url value="http://fhir.nhs.uk/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234&amp;_format=xml"/>
+	</link>
+	<entry>
+		<fullUrl value="https://fhir.nhs.uk/Consent/0353e505-f7be-4c20-8f4e-337e79a32c51"/>
+		<resource>
+			<Consent>
+				<id value="0353e505-f7be-4c20-8f4e-337e79a32c51"/>
+				<meta>
+					<versionId value="d837bf2c-dc47-4cb9-9483-03986c21e38c"/>
+					<lastUpdated value="2017-11-16T11:17:32.511+00:00"/>
+					<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1"/>
+				</meta>
+				<extension url="https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1"/>
+							<code value="OP"/>
+							<display value="Online Portal"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<status value="active"/>
+				<patient>
+					<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
+				</patient>
+				<dateTime value="2017-02-01T11:15:33+00:00"/>
+				<consentingParty>
+					<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
+				</consentingParty>
+				<organization>
+					<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/X26"/>
+				</organization>
+				<policy>
+					<authority value="https://www.gov.uk/"/>
+					<uri value="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"/>
+				</policy>
+				<purpose>
+					<system value="http://snomed.info/sct"/>
+					<code value="370856009"/>
+					<display value="Limiting access to confidential patient information"/>
+				</purpose>
+			</Consent>
+		</resource>
+		<search>
+			<mode value="match"/>
+		</search>
+	</entry>
+</Bundle>

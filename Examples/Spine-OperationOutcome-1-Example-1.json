@@ -1,0 +1,25 @@
+{
+  "resourceType": "OperationOutcome",
+  "id": "f19e4165-b379-4377-ad43-df65f609eba5",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/Spine-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "forbidden",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
+            "code": "MSG_RESOURCE_ID_FAIL",
+            "display": "Client is not permitted to assign an id"
+          }
+        ]
+      },
+      "diagnostics": "An attempted has been made to create a new consent record that includes an id."
+    }
+  ]
+}

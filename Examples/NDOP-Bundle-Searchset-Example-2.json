@@ -1,0 +1,77 @@
+{
+  "resourceType": "Bundle",
+  "id": "dd9724d1-7b61-44e2-9023-b72e6b966018",
+  "meta": {
+    "versionId": "1c268b27-fcd9-45fc-92f7-3781b63c2593",
+    "lastUpdated": "2017-11-16T11:23:06.269+00:00"
+  },
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://fhir.nhs.uk/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234&_format=xml"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://fhir.nhs.uk/Consent/0353e505-f7be-4c20-8f4e-337e79a32c51",
+      "resource": {
+        "resourceType": "Consent",
+        "id": "0353e505-f7be-4c20-8f4e-337e79a32c51",
+        "meta": {
+          "versionId": "d837bf2c-dc47-4cb9-9483-03986c21e38c",
+          "lastUpdated": "2017-11-16T11:17:32.511+00:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-NDOP-OptOutSource-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/NDOP-OptOutSource-1",
+                  "code": "OP",
+                  "display": "Online Portal"
+                }
+              ]
+            }
+          }
+        ],
+        "status": "active",
+        "patient": {
+          "reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"
+        },
+        "dateTime": "2017-02-01T11:15:33+00:00",
+        "consentingParty": [
+          {
+            "reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"
+          }
+        ],
+        "organization": [
+          {
+            "reference": "https://directory.spineservices.nhs.uk/STU3/Organization/X26"
+          }
+        ],
+        "policy": [
+          {
+            "authority": "https://www.gov.uk/",
+            "uri": "https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"
+          }
+        ],
+        "purpose": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "370856009",
+            "display": "Limiting access to confidential patient information"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}

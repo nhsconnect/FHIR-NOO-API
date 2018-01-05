@@ -36,7 +36,7 @@ Where a resource does not exist:
 
 This would indicate it is safe to create a Consent resource for this patient. See [section 2](#section2) for register interaction. 
 
-Example below demonstrates a response where no resource exists 
+Example below demonstrates a response where no resource exists using XML. JSON example can be viewed here [(Bundle)](Examples/NDOP-Bundle-Searchset-Example-1.json)
 
 ```xml
 <Bundle xmlns="http://hl7.org/fhir">
@@ -60,15 +60,19 @@ Where a resource does exist:
 - Bundle resource of type *searchset* containing a maximum total value 1 Consent resource.
 - The existence of a resource requires an update interaction to overwrite the existing old resource with a new version. The previous version will become historic. See the section titled [Update Patient’s Existing National Data Opt-out Preferences Interaction](#section3) for information on updating an existing consent resource using logical id.
 
-Example of bundle section containing searchset. Note that <id> in this section is the bundle id and NOT the consent id:
+Example of bundle section containing searchset in XML. Note that <id> in this section is the bundle id and NOT the consent id:
 
 <script src="https://gist.github.com/IOPS-DEV/543abe076ce20ff348a7d244f42308b2.js"></script>
 
 <a id="section1"></a>
 
-The remaining section of the same XML contains the Consent resource for the patient. The `<id>` here is the unique logical id for the consent resource:
+The remaining section of the same XML contains the Consent resource for the patient. 
+
+The `<id>` here is the unique logical id for the consent resource:
 
 <script src="https://gist.github.com/IOPS-DEV/a65f8f6e775f7c7c6cd3aa1bd340ef1d.js"></script>
+
+Full JSON example can be viewed [(here)](Examples/NDOP-Bundle-Searchset-Example-2.json). 
 
 <a name="section2"></a>
 
@@ -85,7 +89,7 @@ POST https://fhir.nhs.uk/Consent
 
 {% include note.html content="Details on the FHIR RESTful specification for creating a new instance can be found here [RESTful Create](https://www.hl7.org/fhir/http.html#create)" %}
 
-An example of a new resource is displayed below:
+An XML example of a new resource is displayed below. JSON example can be viewed [(here)](Examples/Consent-Example-1.json)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,18 +110,10 @@ An example of a new resource is displayed below:
 	<patient>
 		<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
 	</patient>
-	<dateTime value="2017-11-16T15:17:33+00:00"/>
-	<actor>
-		<role>
-			<coding>
-				<system value="http://hl7.org/fhir/v3/ParticipationType"/>
-				<code value="INF"/>
-			</coding>
-		</role>
-		<reference>
-			<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
-		</reference>
-	</actor>
+	<dateTime value="2017-12-14T11:15:33+00:00"/>
+		<consentingParty>
+		<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
+	</consentingParty>
 	<organization>
 		<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/X26"/>
 	</organization>
@@ -126,7 +122,7 @@ An example of a new resource is displayed below:
 		<uri value="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"/>
 	</policy>
 	<purpose>
-		<system value="http://snomed.info/sct"/>
+		<system value="https://snomed.info/sct"/>
 		<code value="370856009"/>
 		<display value="Limiting access to confidential patient information"/>
 	</purpose>
@@ -152,11 +148,11 @@ Failure:
 |405|error|forbidden|MSG_RESOURCE_ID_FAIL|Client is not permitted to assign an id|
 |422|error|duplicate|DUPLICATE_REJECTED|Consent already exists for this patient/policy/purpose|
 
-**Response Spine-OperationOutcome-1 Example**
+**Response Spine-OperationOutcome-1 XML Example**
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<OperationOutcome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../Schemas/operationoutcome.xsd" xmlns="http://hl7.org/fhir">
+<OperationOutcome">
 <id value="f19e4165-b379-4377-ad43-df65f609eba5"/>
 <meta>
 	<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/Spine-OperationOutcome-1"/>
@@ -176,6 +172,7 @@ Failure:
 </OperationOutcome>
 ```
 
+JSOn example can be viewed JSON example can be viewed [(here)](Examples/Spine-OperationOutcome-1-Example-1.json)
 <a name="section3"></a>
 
 {% include warning.html content="Once a logical id has been assigned to the consent resource, it is immutable. Any updates to the consent preferences will use this logical id" %}
@@ -193,12 +190,11 @@ PUT https://[base url]/Consent/[logical id]
 
 The entire XML body will be replaced with a new version to include one or more changes, in addition to the <id> element. Unchanged data MUST still be included.
 
-Example of updated Consent resource body from example provided in section titled [Check for any existing National Data Opt-out resource](#section1). Only status has changed from active to inactive. All other data remains unchanged.
+Example of updated Consent resource body from example provided in section titled [Check for any existing National Data Opt-out resource](#section1). Only status has changed from active to inactive, and dateTime updated with date and time of update. All other data remains unchanged.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Consent xmlns="http://hl7.org/fhir">
-	<id value="0353e505-f7be-4c20-8f4e-337e79a32c51"/>
 	<meta>
 		<profile value="https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1"/>
 	</meta>
@@ -215,18 +211,10 @@ Example of updated Consent resource body from example provided in section titled
 	<patient>
 		<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
 	</patient>
-	<dateTime value="2017-02-01T11:15:33+00:00"/>
-	<actor>
-		<role>
-			<coding>
-				<system value="http://hl7.org/fhir/v3/ParticipationType"/>
-				<code value="INF"/>
-			</coding>
-		</role>
-		<reference>
-			<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
-		</reference>
-	</actor>
+	<dateTime value="2017-12-19T11:15:33+00:00"/>
+		<consentingParty>
+		<reference value="https://demographics.spineservices.nhs.uk/STU3/Patient/6105551234"/>
+	</consentingParty>
 	<organization>
 		<reference value="https://directory.spineservices.nhs.uk/STU3/Organization/X26"/>
 	</organization>
@@ -235,7 +223,7 @@ Example of updated Consent resource body from example provided in section titled
 		<uri value="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/535024/data-security-review.PDF"/>
 	</policy>
 	<purpose>
-		<system value="http://snomed.info/sct"/>
+		<system value="https://snomed.info/sct"/>
 		<code value="370856009"/>
 		<display value="Limiting access to confidential patient information"/>
 	</purpose>
@@ -299,7 +287,7 @@ Note: Although an HTTP response 200 OK indicates the request was successful, the
 
 **XML Example 1**
 
-The example below demonstrates the structure of a constructed XML body that can be submitted to the National Data Opt-out service via a HTTP POST. This will set the preferences for RESCH only.
+The example below demonstrates the structure of a constructed XML body that can be submitted to the National Data Opt-out service via a HTTP POST. 
 
 <script src="https://gist.github.com/IOPS-DEV/49fa92287f5b1f05cf451a2f2466a77f.js"></script>
 
