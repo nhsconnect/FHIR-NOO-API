@@ -88,49 +88,8 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL1tDb25zdW1lclN5c3RlbVV
 		}]
 	},
 	"requested_scopes": "consent/*.read",
-	"requesting_device": {
-		"resourceType": "Device",
-		"id": "009f0bf0-d434-11e6-9598-0800200c9a66",
-		"meta": {
-			"profile": [
-				"https://fhir.nhs.uk/StructureDefinition/audit-device-1"
-			]
-		},
-		"identifier": [{
-			"id": "0b7677c0-d434-11e6-9598-0800200c9a66"
-		}],
-		"type": {
-			"coding": [{
-				"system": "http://snomed.info/sct",
-				"code": "462240000",
-				"display": "Patient health record information system (physical object)"
-			}]
-		},
-		"model": "AA 1001-C",
-		"version": "8.15-04"
-	},
-	"requesting_organization": {
-		"resourceType": "Organization",
-		"id": "1a9f3c50-d434-11e6-9598-0800200c9a66",
-		"meta": {
-			"profile": [
-				"https://fhir.nhs.uk/StructureDefinition/audit-organization-1"
-			]
-		},
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/ods-organization-code",
-			"value": "R1A02"
-		}],
-		"name": "King's College Hospital"
-	},
-	"requesting_practitioner": {
-		"resourceType": "Practitioner",
-		"id": "3516e6a0-d434-11e6-9598-0800200c9a66",
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/local-practitioner-identifier",
-			"value": "123456"
-		}]
-	}
+	"requesting_organization": "R1A02",
+	"requesting_practitioner": "123456"
 }
 ```
 
