@@ -15,7 +15,7 @@ The conseningProxyRole extension is used to capture a patients proxys role that 
 
 |Type|name|Data Type|Description|
 | ------------- | ------------- | ------------- | ------------- |
-| Extension| Extension-consentingProxyRole-1| CodeableConcept | Mechanism used to capture a proxy role whilst defining a patients opt-out preference|
+| Extension| Extension-NDOP-onsentingProxyRole-1| CodeableConcept | Mechanism used to capture a proxy role whilst defining a patients opt-out preference|
 |Complex.extension|role|CodeableConcept|The role played by a proxy. Uses valueset https://fhir.nhs.uk/STU3/ValueSet/NDOP-ProxyRole-1|
 |Complex.extension|NIC|string|Where a preference was set by a proxy via a contact centre a NIC reference may be provided|
 

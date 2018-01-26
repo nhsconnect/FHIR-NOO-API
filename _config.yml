@@ -106,7 +106,7 @@ repository: nhsconnect/fhir-noo-api
 gist:
   noscript: false
 
-gems:
+plugins_dir:
    - jekyll-github-metadata
    - jekyll-mentions
    - jemoji

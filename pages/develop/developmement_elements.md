@@ -44,9 +44,9 @@ National Data Opt-out Source of Opt-Out extension
 
 |Name|Data Type|Card|Description|
 |----|---------|----|-----------|
-|[`consentingProxyRole`](consent_extension_consentingproxyrole.html)|extension|0..1|Complex extension to capture proxy role and an optional NIC reference e.g GUARDIAN / 1234ABC|
+|[`consentingProxyRole`](consent_extension_consentingproxyrole.html)|extension|0..1|Extension to capture proxy role e.g GUARDIAN|
 |[`SourceOfOptOut`](consent_extension_sourceofoptout.html)|extension|1..1|Extension to capture the source that defined the national opt-out preferences e.g NHS Choice, GP System|
-
+|[`NICReference`](consent_extension_nicreference.html)|extension|0..1|Extension to capture the National Information Centre (NIC) record reference where preference is set via the contact centre|
 
 {% include custom/search.nopat.patient.html para="2.1.2." resource="Consent" content="patient"  example="https://demographics.spineservices.nhs.uk/STU3/Patient/6101231223" text1="patient" text2="6101231223" %}
 
