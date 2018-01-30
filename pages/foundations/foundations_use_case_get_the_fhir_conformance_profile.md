@@ -21,11 +21,11 @@ Client SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `From`           | Consumer's ASID |
-| `To`             | Provider's ASID |
-| `InteractionID`  | `urn:nhs:names:services:nationaldataoptout:fhir:rest:read:metadata`|
-| `Authorization`      | This will carry the base64 encoded JSON web token required for audit - see [Cross Organisation Audit and Provenance](https://nhsconnect.github.io/FHIR-NOO-API/development_security_jwt.html) for details. |
+| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
+| `Ssp-From`           | Consumer's ASID |
+| `Ssp-To`             | Provider's ASID |
+| `Ssp-InteractionID`  | `urn:nhs:names:services:nationaldataoptout:fhir:rest:read:metadata`|
+| `Ssp-Authorization`  | This will carry the base64 encoded JSON web token required for audit - see [Cross Organisation Audit and Provenance](https://nhsconnect.github.io/FHIR-NOO-API/development_security_jwt.html) for details. |
 
 An example capabilityStatement profile is available [here](https://nhsconnect.github.io/FHIR-NOO-API/Examples/NDOP-CapabilityStatement-Example-1.xml) - client systems should always use the CapabilityStatement profile retrieved from the server being used as the authoritative capability statement - the example link above is provided as an example for reference only.
 
