@@ -10,10 +10,17 @@ summary: "Use case for getting the FHIR server's capability statement profile."
 {% include important.html content="The capabilityStatement provided is based on the requirements for the National Data Opt-out API. How this is implemented is outside the scope of this guide" %}
 
 
-### Example capabilityStatement
-
+### Requirements capabilityStatement
 
 <script src="https://gist.github.com/IOPS-DEV/af36c2f3f03a2b0641af9961f46073ea.js"></script>
+
+JSON example can be viewed [(here)](Examples/NDOP-CapabilityStatement-Example-1.json)
+
+### Instance capabilityStatement
+
+<script src="https://gist.github.com/IOPS-DEV/599b0e7d4e2d1ff4545aa66e7da72f6a.js"></script>
+
+JSON example can be viewed [(here)](Examples/NDOP-CapabilityStatement-Example-2.json)
 
 #### Request Headers ####
 
