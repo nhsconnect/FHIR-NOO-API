@@ -1,7 +1,7 @@
 entries:
 - title: National Data Opt-out Programme
   product: National Data Opt-out Programme<br/>
-  version: 0.0.11-alpha
+  version: 1.0.0-beta
   levels: one
   folders:
   - title: Overview

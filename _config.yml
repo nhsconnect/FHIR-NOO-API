@@ -103,6 +103,8 @@ url: https://nhsconnect.github.io/fhir-noo-api
 
 repository: nhsconnect/fhir-noo-api
 
+github: [metadata]
+
 gist:
   noscript: false
 
