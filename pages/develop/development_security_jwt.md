@@ -84,8 +84,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL1tDb25zdW1lclN5c3RlbVV
 	"requesting_patient": "http://fhir.nhs.net/Id/nhs-number|6101231234"
 }
 ```
-
-{% include important.html content="Additional information on the use of Access Tokens and Audit using JWT can be found at <a href="https://nhsconnect.github.io/FHIR-SpineCore/security_jwt.html">FHIR Spine Core API</a> %}
+Additional information on the use of Access Tokens and Audit using JWT can be found at <a href="https://nhsconnect.github.io/FHIR-SpineCore/security_jwt.html">FHIR Spine Core API</a>
 
 
 
