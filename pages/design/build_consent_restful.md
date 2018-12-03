@@ -278,7 +278,7 @@ Note: Although an HTTP response 200 OK indicates the request was successful, the
 	<total value="0"/>
 	<link>
 		<relation value="self"/>
-		<url value="http://localhost:4080/Consent?patient=https://demographics.spineservices.nhs.uk//45055771aaaa&amp;_format=xml"/>
+		<url value="http://demographics.spineservices.nhs.uk/Consent?patient=https://demographics.spineservices.nhs.uk//45055771aaaa&amp;_format=xml"/>
 	</link>
 </Bundle>
 ```

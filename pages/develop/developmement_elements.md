@@ -8,48 +8,33 @@ summary: "Implementation guide on the characteristics and usage of the profiles 
 ---
 {% include custom/search.warnbanner.html %}
 
-{% include custom/fhir.reference.html resource="Consent" page="NDOP-Consent-1" fhirlink="[Consent](https://www.hl7.org/fhir/consent.html)" content="N/A" userlink="" %}
+### Consent ###
 
-## 1. Read ##
-
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Consent/[id]</div>
-
-{% include custom/read.response.html resource="Consent" content="" %}
-
-## 2. Search ##
-
-<div markdown="span" class="alert alert-success" role="alert">
-GET [baseUrl]/Consent?[searchParameters]</div>
-
-Fetches a bundle of all `Consent` resources for the specified search criteria.
-
-{% include custom/search.header.html resource="Organization" %}
-
-### 2.1. Search Parameters ###
-
-{% include custom/search.parameters.html resource="Consent" link="https://www.hl7.org/fhir/consent.html#search)" %}
+The Natioanl Data Opt-out API captures a request to create a new Opt-out record or update an existing one if it already exists. 
 
 
-|Name|Data Type|Card|Description|Value|
-|----|---------|----|-----------|-----|
-|[`id`](consent_id.html)|string|1..1|Logical id assigned by the FHIR server|Any UUID|
-|[`patient`](consent_patient.html)|Reference|1..1|Spine reference to the patients NHS number traced from PDS|
-|[`status`](consent_status.html)|string|1..1|The current status of the consent instance|active,inactive|
-|[`policy`](consent_policy.html)|uri|1..1|Policy which the Consent record relates to.|
+The following FHIR profiles are used to form the Consent record:
 
-## Consent Extensions ##
+- [NDOP-Consent-1](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1)
 
-National Data Opt-out Source of Opt-Out extension
+### Consent data item mapping to FHIR profiles ###
 
-|Name|Data Type|Card|Description|
-|----|---------|----|-----------|
-|[`consentingProxyRole`](consent_extension_consentingproxyrole.html)|extension|0..1|Extension to capture proxy role e.g GUARDIAN|
-|[`SourceOfOptOut`](consent_extension_sourceofoptout.html)|extension|1..1|Extension to capture the source that defined the national opt-out preferences e.g NHS Choice, GP System|
-|[`NICReference`](consent_extension_nicreference.html)|extension|0..1|Extension to capture the National Information Centre (NIC) record reference where preference is set via the contact centre|
+The consent data item are fulfilled by elements within the FHIR resources listed below:
 
-{% include custom/search.nopat.patient.html para="2.1.2." resource="Consent" content="patient"  example="https://demographics.spineservices.nhs.uk/STU3/Patient/6101231223" text1="patient" text2="6101231223" %}
+| EOL Data Item         | FHIR resource element                   			| Mandatory/Required/Optional |Notes																		  				|
+|-----------------------|---------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------|
+| Consent Status        | NDOP-Consent-1.status     	          			| Mandatory                   | Active = Consent Refused, Inactive = Consent Granted.						  				|
+| Patient				| NDOP-Consent-1.patient				  			| Mandatory					  | PDS reference to patient             										  				|
+| Date/Time 			| NDOP-Consent.dateTime								| Mandatory					  | Date and time when consent record was created.												|
+| ConsentingParty		| NDOP-Consent-1.consentingParty 				    | Optional					  | Patient who grants rights to sharing data									  				|
+| Organisation			| NDOP-Consent-1.organization						| Mandatory					  | Custodian of the consent.												 	  				|
+| Policy				| NDOP-Consent-1.policy					 	        | Mandatory					  | The policy that the consent covers.										      				|
+| Purpose				| NDOP-Consent-1.purpose			  	  			| Mandatory					  | An indication as to what the consent permits. SNOMED-CT coded where possible. 				|
+| opt-out Source	  	| NDOP-Consent-1.optOutSource (extension) 			| Mandatory    			  	  | Where the Opt-out request originated from.									  				|
+| Consenting Proxy Role | NDOP-Consent-1.consentingProxyRole (extension) 	| Optional		  			  | Where the consenting party was not the patient, who was the acting proxy	  				|
+| NIC Reference			| NDOP-Consent-1.NICReference (extension) 		    | Optional					  |	National Information Centre reference where this service was used to set Opt-out preference.|
 
-{% include custom/get.consent.policy.html para="2.1.3." resource="Consent" content="patient and policy" text1="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text2="NDOP-policy-Example-V1.0.pdf" %}
+### Consent Example XML ###
 
+<script src="https://gist.github.com/IOPS-DEV/8897e287a007ba61403b1573503fc971.js"></script>
 

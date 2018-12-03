@@ -3,26 +3,32 @@
 <p>The history interaction retrieves the history of the Consent resource. When a Consent resource is created or updated, a new history entry is created, with each entry being uniquely identifiable by its version identifier (vid). By supporting the history interaction, it will be possible to provide an audit trail of changes made to the patients Consent preference.’</p>
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET {{include.base}}{{include.resource}}/[ID]/_history</div>
+GET {{include.base}}{{include.resource}}/_history?patient=[NHS Number]</div>
 
 <p>See <a href="https://www.hl7.org/fhir/searchparameter-registry.html">reference</a> for details on this parameter.</p>
 
 <div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/133552f9-7aaf-485f-a91a-bdfc0a367409/_history
+<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/_history?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104
 </span></code>
-Return all historic {{include.resource}} instances for a patient with a logical id of {{include.id}}.</pre>
+Return all historic {{include.resource}} instances for a patient with a reference  of {{include.text1}}.</pre>
 </div>
+
+<p>The example below will retrive a history instance with a version id of 5.</p>
 
 <div markdown="span" class="alert alert-success" role="alert">
-GET {{include.base}}{{include.resource}}/_history/?[patient]&[purpose]</div>
+GET {{include.base}}{{include.resource}}/_history?patient=[NHS Number]&verionId=[Id]</div>
+
+<p>See <a href="https://www.hl7.org/fhir/searchparameter-registry.html">reference</a> for details on this parameter.</p>
 
 <div class="language-http highlighter-rouge">
-<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/_history?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104&purpose=RESCH
+<pre class="highlight"><code><span class="err">GET {{include.base}}{{include.resource}}/_history?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104&versionId=5
 </span></code>
-Return all historic {{include.resource}} instances for a patient with reference of {{include.text1}} and a purpose of {{include.text2}}.</pre>
+Return all historic {{include.resource}} instances for a patient with a reference  of {{include.text1}} and a versionId of 5.</pre>
 </div>
 
+
 <p>Example below demonstrates a vread to retrieve a specific historical consent instance</p>
+
 <div markdown="span" class="alert alert-success" role="alert">
 GET {{include.base}}{{include.resource}}/[id]/_history/[vid]</div>
 
