@@ -25,20 +25,18 @@ It is highly recommended that standard libraries are used for creating the JWT a
 
 Consumer system SHALL generate a new JWT for each API request.
 
-| Claim | Priority | Description | Fixed Value | Dynamic Value | Specification / Example |
+| Claim | Mandatory | Description | Fixed Value | Dynamic Value | Specification / Example |
 |-------|----------|-------------|-------------|---------------|-------------------------|
-| iss | R | Client systems issuer URI | No | Yes | |
-| sub | R | requesting_patient.identifier.value or requesting_practitioner.identifier.value or requesting_organization.identifier.value | No | Yes | |
-| aud | R | Authorization server's `token_URL` | `https://authorize.fhir.nhs.uk/token` | No | |
-| exp | R | Expiration time integer after which this authorization MUST be considered invalid. | `exp` | (now + 5 minutes) UTC time in seconds | |
-| iat | R | The UTC time the JWT was issued by the requesting system | iat | now UTC time in seconds | |
-| reason_for_request | R | Purpose for which access is being requested | `optoutprefs` | No | |
-| requested_record | R | The FHIR consent resource being requested | No | FHIR Consent | NDOP-Consent-1 [Rendered](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-Consent-1)[Example](https://nhsconnect.github.io/FHIR-NOO-API/Examples/Consent-Example-1.xml) |
-| requested_scopes | R | Data being requested | `consent/*.[create|read|update]`| No | |
-| requesting_device| R | FHIR device resource making the request | No | FHIR Device| Audit-Device-1 [(Rendered)](https://fhir.nhs.uk/StructureDefinition/audit-device-1) [(json)](http://fhir.nhs.uk/StructureDefinition/audit-device-1/_history/1.1?_format=json) [(Example)](Audit/Examples/Device.json) |
-| requesting_patient| R | FHIR patient making the request | No | FHIR Patient | Audit-Patient-1 [(Rendered)](https://fhir.nhs.uk/StructureDefinition/audit-patient-1) [(json)](http://fhir.nhs.uk/StructureDefinition/audit-patient-1/_history/1.1?_format=json) [(Example)](Audit/Examples/Patient.json)|
-| requesting_organization| R | FHIR organization making the request | No | FHIR Organization | Audit-Organization-1 [(Rendered)](https://fhir.nhs.uk/StructureDefinition/audit-organization-1) [(json)](http://fhir.nhs.uk/StructureDefinition/audit-organization-1/_history/1.1?_format=json) [(Example)](Audit/Examples/Organization.json)|
-| requesting_practitioner| R | FHIR practitioner making the request | No | FHIR Practitioner | Audit-Practitioner-1 [(Rendered)](https://fhir.nhs.uk/StructureDefinition/audit-practitioner-1) [(json)](http://fhir.nhs.uk/StructureDefinition/audit-practitioner-1/_history/1.1?_format=json) [(Example - smartcard)](Audit/Examples/Practitioner1a.json) <br /> [(Example - non-smartcard)](Audit/Examples/Practitioner1b.json)|
+| iss | Y | Client systems issuer URI | No | Yes | |
+| sub | Y | requesting_patient.identifier.value or requesting_practitioner.identifier.value or requesting_organization.identifier.value | No | Yes | |
+| aud | Y | Authorization server's `token_URL` | `https://clinicals.spineservices.nhs.uk` | No | |
+| exp | Y | Expiration time integer after which this authorization MUST be considered invalid. | `exp` | (now + 5 minutes) UTC time in seconds | |
+| iat | Y | The UTC time the JWT was issued by the requesting system | iat | now UTC time in seconds | |
+| reason_for_request | Y | Purpose for which access is being requested | `patientaccess` | No | |
+| scope | Y | Data being requested | No | `consent/*.[create|read|update]` |
+| requesting_system | Y | Identifier for the system or device making the request | No | System or Device Identifier
+| requesting_patient | N | Citizen making the request | No | NHS Number
+| requesting_user | N | Health or Social Care professional making the request | No | User Identifier
 
 {% include important.html content="In topologies where consumer applications are provisioned via a portal or middleware hosted by another organisation (e.g. a 'mini service' provider) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation. Where a patient is the consumer of the application, they will be populated in the JWT." %}
 
@@ -75,25 +73,18 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL1tDb25zdW1lclN5c3RlbVV
 
 ```json
 {
-	"iss": "https://www.nhs.uk",
-	"sub": "National Data Opt-out Preferences",
-	"aud": "https://authorize.fhir.nhs.uk/token",
+	"iss": "https://citizen-id.nhs.uk",
+	"sub": "http://fhir.nhs.net/Id/nhs-number|6101231234",
+	"aud": "https://clinicals.spineservices.nhs.uk",
 	"exp": 1469436987,
 	"iat": 1469436687,
-	"reason_for_request": "optoutprefs",
-	"requested_record": {
-		"resourceType": "Consent",
-		"patient": [{
-			"reference": "https://demographics.spineservices.nhs.uk/STU3/Patient/6101231234"
-		}]
-	},
-	"requested_scopes": "consent/*.read",
-	"requesting_organization": "R1A02",
-	"requesting_practitioner": "123456"
+	"reason_for_request": "patientaccess",
+	"scope": "patient/consent.read patient/consent.write",
+	"requesting_system": "https://fhir.nhs.uk/Id/accredited-system|200000000205",
+	"requesting_patient": "http://fhir.nhs.net/Id/nhs-number|6101231234"
 }
 ```
-
-{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) NHS Digital hasn't committed to using the SMART on FHIR specification." %}
+Additional information on the use of Access Tokens and Audit using JWT can be found at <a href="https://nhsconnect.github.io/FHIR-SpineCore/security_jwt.html">FHIR Spine Core API</a>
 
 
 

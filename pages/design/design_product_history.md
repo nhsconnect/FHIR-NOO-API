@@ -6,6 +6,28 @@ sidebar: overview_sidebar
 permalink: design_product_history.html
 summary: History of changes to the National Data Opt-out API.
 ---
+### Version 1.1.0-beta ###
+
+- Removed REST statements relating to the use of policy within the paramters.
+- Replaced contents of the Resources->Consent page with a data mapping view to keep this consistent with other implementation guides.
+- Added additional search parameters for use with history searching.
+- Corrections to versioning.
+
+### Version 1.0.0-beta ###
+
+Alpha release of National Data Opt-out API
+
+### Version 0.0.11-alpha
+
+- Proxy role extension added to spec; extension-NDOP-consentingProxyRole-1 to support preferences set via a patient proxy.
+- National Information Centre (NIC) extension added to spec; extension-NDOP-NICReference-1 to support NIC record reference when a patient or proxy defines Opt-out preferences via the NIC contact centre.
+- OPTIONAL category added for future Opt-out usage. Not used in current National Data Opt-out.
+- Purpose element no longer has fixed value to make profile more flexible.
+- Organization element no longer has a fixed value to make profile more flexible.
+- Policy example replaced with a placeholder example until a uri is approved.
+- Examples stored on Git have been updated to reflect changes in the specification.
+
+
 ### Version 0.0.10-alpha
 
 - National Data Opt-out will only support a single question. Purpose element has been updated to use SNOMED CT terminology to support this change in direction.
@@ -27,7 +49,7 @@ summary: History of changes to the National Data Opt-out API.
 - Release date removed from IG
 - Grammatical corrections made throughout guide
 - Consent elements updated with clearer descriptions
-- Correction to Online Portal code used in an example.
+- Correction to On-line Portal code used in an example.
 - Correction to example showing incorrect purpose code.
 - REST history description updated
 - The use of `If-None_exists` header removed from API. conditionalCreate is therefore not supported.

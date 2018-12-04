@@ -4,7 +4,7 @@ keywords: source, extension
 tags: [source,extension]
 sidebar: profiles_sidebar
 permalink: consent_extension_sourceofoptout.html
-summary: "low level details for the care connect patient 'SourceOfOptOut' extension"
+summary: "low level details for the National Data Opt-out Consent 'SourceOfOptOut' extension"
 ---
 
 ### Element Usage ###
@@ -15,7 +15,7 @@ The SourceOfOptOut extension is used to capture the mechanism used to set the pa
 
 |Type|name|Data Type|Description|
 | ------------- | ------------- | ------------- | ------------- |
-| Extension| Extension-SourceOfOptOut-1| Coding | Mechanism used to capture patient National Data Opt-out preferences |
+| Extension| Extension-NDOP-SourceOfOptOut-1| Coding | Mechanism used to capture patient National Data Opt-out preferences |
 
 ## CodeSystem 
 
@@ -23,7 +23,6 @@ National Data Opt-out supports the following source of opt-out codes:
 
 |Code|Display|Definition|
 |OP|OP|Online Process|
-|GP|GP|GP System|
 |PFSP|PFSP|Patient Facing Service App|
 |FN|FN|Form on NHS.UK|
 |CC|CC|Call Centre|

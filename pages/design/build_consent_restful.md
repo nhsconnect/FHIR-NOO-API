@@ -24,7 +24,7 @@ Prior to creating a Consent resource, a check MUST be carried out against that p
 - ***Receiver:*** Spine 2
 
 ```
-GET https://fhir.nhs.uk/STU3/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233
+GET https://[baseUrl]/Consent?patient=https://demographics.spineservices.nhs.uk/STU3/Patient/6105551233
 ``` 
 
 **Responses**
@@ -84,7 +84,7 @@ Where an existing Consent resource does not exist, the client system will constr
 - ***Receiver:*** Spine 2
 
 ```
-POST https://fhir.nhs.uk/Consent
+POST https://[baseUrl]/Consent
 ```
 
 {% include note.html content="Details on the FHIR RESTful specification for creating a new instance can be found here [RESTful Create](https://www.hl7.org/fhir/http.html#create)" %}
@@ -278,7 +278,7 @@ Note: Although an HTTP response 200 OK indicates the request was successful, the
 	<total value="0"/>
 	<link>
 		<relation value="self"/>
-		<url value="http://localhost:4080/Consent?patient=https://demographics.spineservices.nhs.uk//45055771aaaa&amp;_format=xml"/>
+		<url value="http://demographics.spineservices.nhs.uk/Consent?patient=https://demographics.spineservices.nhs.uk//45055771aaaa&amp;_format=xml"/>
 	</link>
 </Bundle>
 ```
@@ -291,15 +291,15 @@ The example below demonstrates the structure of a constructed XML body that can 
 
 <script src="https://gist.github.com/IOPS-DEV/49fa92287f5b1f05cf451a2f2466a77f.js"></script>
 
-{% include custom/post.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content1="POST" text1="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104"%}
+{% include custom/post.consent.html base="[baseUrl]/" resource="Consent" content1="POST" text1="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104"%}
 
 {% include warning.html content="To prevent duplicate NDOP instances for a patient, implementers MUST perform a search prior to a create, to check for an existing instance, or use a conditional create for creating new instances."%}
 
 
-{% include custom/get.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="133552f9-7aaf-485f-a91a-bdfc0a367409" nhsno="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text3="370856009"%}
+{% include custom/get.consent.html base="[baseUrl]/" resource="Consent" content2="GET" id="133552f9-7aaf-485f-a91a-bdfc0a367409" nhsno="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text3="370856009"%}
 
-{% include custom/put.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="PUT" id="133552f9-7aaf-485f-a91a-bdfc0a367409"%}
+{% include custom/put.consent.html base="[baseUrl]/" resource="Consent" content2="PUT" id="133552f9-7aaf-485f-a91a-bdfc0a367409"%}
 
 ## Searching National Data Opt-out History ##
 
-{% include custom/history.consent.html base="https://fhir.nhs.uk/STU3/" resource="Consent" content2="GET" id="785f7cc6-f63b-41fc-9bd4-2d09df5606f9" text1="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text2="370856009" histid="6ed33184-56ab-450f-98c5-8f86d7310766"%}
+{% include custom/history.consent.html base="[baseUrl]/" resource="Consent" content2="GET" id="785f7cc6-f63b-41fc-9bd4-2d09df5606f9" text1="https://demographics.spineservices.nhs.uk/STU3/Patient/4505577104" text2="370856009" histid="6ed33184-56ab-450f-98c5-8f86d7310766"%}
