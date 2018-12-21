@@ -28,5 +28,5 @@ Client SHALL include the following additional HTTP request headers:
 | `Ssp-InteractionID`  | `urn:nhs:names:services:nationaldataoptout:fhir:rest:read:metadata`|
 | `Ssp-Authorization`  | This will carry the base64 encoded JSON web token required for audit - see [Cross Organisation Audit and Provenance](https://nhsconnect.github.io/FHIR-NOO-API/development_security_jwt.html) for details. |
 
-An example capabilityStatement profile is available [here](https://fhir.nhs.uk/STU3/StructureDefinition/NDOP-CapabilityStatement-1) - client systems should always use the CapabilityStatement profile retrieved from the server being used as the authoritative capability statement - the example link above is provided as an example for reference only.
+
 
