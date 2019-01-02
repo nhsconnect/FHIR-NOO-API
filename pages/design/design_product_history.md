@@ -8,14 +8,14 @@ summary: History of changes to the National Data Opt-out API.
 ---
 ### Version 1.1.0-beta ###
 
-- Removed REST statements relating to the use of policy within the paramters.
+- Removed REST statements relating to the use of policy within the parameters.
 - Replaced contents of the Resources->Consent page with a data mapping view to keep this consistent with other implementation guides.
 - Added additional search parameters for use with history searching.
 - Corrections to versioning.
 
 ### Version 1.0.0-beta ###
 
-Alpha release of National Data Opt-out API
+Beta release of National Data Opt-out API
 
 ### Version 0.0.11-alpha
 
