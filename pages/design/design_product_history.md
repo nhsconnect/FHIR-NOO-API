@@ -6,16 +6,14 @@ sidebar: overview_sidebar
 permalink: design_product_history.html
 summary: History of changes to the National Data Opt-out API.
 ---
-### Version 1.1.0-beta ###
+### Version 1.0.0-beta ###
+
+Beta release of National Data Opt-out API
 
 - Removed REST statements relating to the use of policy within the parameters.
 - Replaced contents of the Resources->Consent page with a data mapping view to keep this consistent with other implementation guides.
 - Added additional search parameters for use with history searching.
 - Corrections to versioning.
-
-### Version 1.0.0-beta ###
-
-Beta release of National Data Opt-out API
 
 ### Version 0.0.11-alpha
 
